@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>
+        Registration Form
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/user/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
+    <script type="text/javascript">
+        function checkForm(form) {
+            if (form.password.value == form.cpassword.value) {
+                alert("You entered a valid password: " + form.pwd1.value);
+                return true;
+            } else {
+                alert("Error: Please check that you've entered and confirmed your password!");
+                form.pwd1.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ["You can do anything with your text here!", "Enter your text here and let Text Utils do the magic!"],
+            backSpeed: 15,
+            smartBackspace: true,
+            backDelay: 1200,
+            startDelay: 1000,
+            typeSpeed: 25,
+            loop: false,
+
+        });
+    </script>
+</head>
+
+<body style="background-image: url('/static/user/img/bg3.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+
+    <h3><span id="typed"></span></h3>
+    <div class="container">
+        <div class="row" style="margin-top: 10%;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 form-box">
+                <h1 class="text-center">SignUP</h1>
+                <form onsubmit="return checkForm(this);" action="signup.php" method="POST">
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" type="email" class="form-control" placeholder="Enter Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Passsword:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input name="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input name="cpassword" type="password" class="form-control" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Contact Details:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="contact" type="tel" class="form-control" maxlength="11" placeholder="XXXXX XXXXX" pattern="[0-9]{5}[ ][0-9]{5}" size="5" required>
+                        </div>
+                    </div> -->
+                    <h6 class="text-center">OR
+                        <a href="/login">
+                            <h5 style="display: inline;"><br><br>Already Have a Account</h5>
+                        </a>
+                        <b style="font-size: 15;">&nbsp; | &nbsp; </b>
+                        <a href="business/">
+                            <h5 style="display: inline;">Create A Business Account</h5>
+                        </a>
+                    </h6>
+                    <input type="submit" class="btn btn-success" name="register" value="Submit">
+                    <input type="reset" value="Reset" class="btn btn-danger">
+                    <button class="btn btn-default" style="background-color: black;">
+                        <a href="/" style="text-decoration: none;color:white">Home</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
