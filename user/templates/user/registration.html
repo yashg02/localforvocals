@@ -45,26 +45,33 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 form-box">
                 <h1 class="text-center">SignUP</h1>
-                <form onsubmit="return checkForm(this);" action="signup.php" method="POST">
+                <form action='/handleSignup' method='post'>
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="username" type="text" id="username" class="form-control" placeholder="Enter Your Username" required>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label>Email:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input name="email" type="email" class="form-control" placeholder="Enter Email" required>
+                            <input name="email" type="email" id="email" class="form-control" placeholder="Enter Email" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Passsword:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input name="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input name="password" type="password" id="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Confirm Password:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input name="cpassword" type="password" class="form-control" placeholder="Confirm Password" required>
+                            <input name="cpassword" type="password" id="cpassword" class="form-control" placeholder="Confirm Password" required>
                         </div>
                     </div>
                     <!-- <div class="form-group">
@@ -75,7 +82,7 @@
                         </div>
                     </div> -->
                     <h6 class="text-center">OR
-                        <a href="/login">
+                        <a href="/Login">
                             <h5 style="display: inline;"><br><br>Already Have a Account</h5>
                         </a>
                         <b style="font-size: 15;">&nbsp; | &nbsp; </b>
@@ -83,6 +90,7 @@
                             <h5 style="display: inline;">Create A Business Account</h5>
                         </a>
                     </h6>
+                    {% csrf_token %}
                     <input type="submit" class="btn btn-success" name="register" value="Submit">
                     <input type="reset" value="Reset" class="btn btn-danger">
                     <button class="btn btn-default" style="background-color: black;">

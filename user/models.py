@@ -9,6 +9,6 @@ class channel(models.Model):
     desc = models.CharField(max_length=200, default="")
     image = models.ImageField(upload_to='user/images', default="")
     date = models.DateField(default=date(1111, 11, 11))
-
+    objects=models.Manager()
     def __str__(self):
         return self.name

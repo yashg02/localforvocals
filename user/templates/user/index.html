@@ -59,7 +59,20 @@
                             </div>
                         </form>
                     </li>
-                    <li><a href="login/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto" style="margin-top: 15px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           Welcome {{request.user}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                      </li>
+                    </ul>
+                    {% else %}
+                    <li><a href="Login/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
+                    {% endif %}
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart(0)</a></li>
                 </ul>
             </div>

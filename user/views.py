@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import channel
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -33,8 +34,8 @@ def storeinfo(request, myid):
     product=channel.objects.filter(id=myid)
     return render(request, 'user/storeinfo.html', {'product':product[0], 'prod': prod})
 
-def login(request):
-    return render(request, 'user/login.html')
+def Login(request):
+    return render(request, 'user/Login.html')
 
 def signup(request):
     return render(request, 'user/registration.html')
@@ -44,3 +45,66 @@ def business(request):
 
 def prod(request):
     return render(request, 'user/prodview.html') 
+
+def handleSignup(request):
+    if request.method == 'POST':
+
+        # Get user params
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        cpassword = request.POST['cpassword']
+
+        #Checks for erroneous inputs
+
+        #Username lenght check
+        if len(username) > 10:
+            messages.error(request, 'Username too long')
+            return redirect('home')
+
+        #Alphanumeric check
+        if not username.isalnum():
+            messages.error(request, 'Username must comprise of alphanumeric characters')
+            return redirect('home')
+
+        #Password match check
+        if password != cpassword:
+            messages.success(request, 'Passwords do not match.')
+            return redirect('home')
+
+        #Create User
+        myuser = User.objects.create_user(username, email, password)
+        myuser.name = username
+        myuser.email = email
+        myuser.password = password
+        myuser.save()
+        messages.success(request, 'Your Account has been created')
+        return redirect('home')
+
+    return HttpResponse('404 - NOT FOUND')
+
+
+def handleLogin(request):
+    if request.method == 'POST':
+
+        # Get user params
+        loginusername = request.POST['loginusername']
+        loginpassword = request.POST['loginpassword']
+
+        user = authenticate(username= loginusername, password= loginpassword)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Successfully Logged In")
+            return redirect('home')
+
+        else:
+            messages.error(request, "Invalid Credentials. Please try again.")
+            return redirect('home')
+
+    return HttpResponse('404 - NOT FOUND')
+
+def handleLogout(request):
+    logout(request)
+    messages.success(request, "Successfully Logged Out")
+    return redirect('home')
