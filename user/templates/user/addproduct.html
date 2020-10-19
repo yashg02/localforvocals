@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>
+        Add a Product
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/user/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
+    <script type="text/javascript">
+        function checkForm(form) {
+            if (form.password.value == form.cpassword.value) {
+                alert("You entered a valid password: " + form.pwd1.value);
+                return true;
+            } else {
+                alert("Error: Please check that you've entered and confirmed your password!");
+                form.pwd1.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ["You can do anything with your text here!", "Enter your text here and let Text Utils do the magic!"],
+            backSpeed: 15,
+            smartBackspace: true,
+            backDelay: 1200,
+            startDelay: 1000,
+            typeSpeed: 25,
+            loop: false,
+
+        });
+    </script>
+</head>
+
+<body style="background-image: url('/static/user/img/bg3.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+
+    <div class="container">
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 form-box">
+                <h1 class="text-center">Add a Product</h1>
+                <form onsubmit="return checkForm(this);" action="signup.php" method="POST">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="name" type="text" class="form-control" placeholder="Enter Name of the Product" required>
+                        </div>
+                    </div>
+                    <div class="input_fields_wrap1 form-group">
+                        <label>Add Display Image:</label>
+                        <div style="margin-top:5px;"><input type="file" accept="image/*" class="form-control-file" name="image[]" multiple></div>
+                    </div>
+                    <div class="input_fields_wrap form-group">
+                        <button class="add_field_button" style="border-radius:50%;">+</button>
+                        <label>Choose Color:</label>
+                        <div style="margin-top:5px;"><input type="color" id="color[]" name="color[]" value="#f4511e"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Size:</label>
+                        <div class="input-group">
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="category" required>S</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="category">M</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="category">L</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="category">XL</label>
+                            </div>
+                            <input name="size" type="text" class="form-control" placeholder="Use , to separate sizes">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity:</label>
+                        <input name="quantity" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" class="form-control" placeholder="Enter Quantity" maxlength="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea class="form-control" rows="2" placeholder="Write Here..." name="description" required></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success" name="register" value="Submit">
+                    <input type="reset" value="Reset" class="btn btn-danger">
+                    <button class="btn btn-default" style="background-color: black;">
+                        <a href="/" style="text-decoration: none;color:white">Home</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var max_fields      = 5; //maximum input boxes allowed
+            var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+            var add_button      = $(".add_field_button"); //Add button ID
+
+            var x = 1; //initlal text box count
+            $(add_button).click(function(e){ //on add input button click
+                e.preventDefault();
+                if(x < max_fields){ //max input box allowed
+                    x++; //text box increment
+                    $(wrapper).append('<div style="margin-top:2px;"><input type="color" id="color[]" name="color[]" value="#f4511e"><a href="#" class="remove_field" style="text-decoration:none;"> Delete</a></div>'); //add input box
+                }
+            });
+
+            $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                e.preventDefault(); $(this).parent('div').remove(); x--;
+            })
+        });
+
+    </script>
+</body>
+
+</html>

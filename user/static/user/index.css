@@ -491,23 +491,6 @@ section .container-fluid {
     position: relative;
 }
 
-.client_review .client_img:after {
-    position: absolute;
-    content: "";
-    right: -8px;
-    bottom: -10px;
-    content: '\f100';
-    font-family: 'Flaticon';
-    height: 50px;
-    width: 50px;
-    background-color: #E4D3DF;
-    font-size: 14px;
-    border-radius: 50%;
-    line-height: 50px;
-    color: #fff;
-}
-
-
 /* Sticky */
 
 div.sticky {

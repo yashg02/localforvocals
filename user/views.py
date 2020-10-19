@@ -44,7 +44,10 @@ def business(request):
     return render(request, 'user/business.html')
 
 def prod(request):
-    return render(request, 'user/prodview.html') 
+    return render(request, 'user/prodview.html')
+
+def product(request):
+    return render(request, 'user/addproduct.html')
 
 def handleSignup(request):
     if request.method == 'POST':
