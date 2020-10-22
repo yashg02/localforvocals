@@ -18,6 +18,9 @@
 
 <body id="myPage" data-spy="scroll">
     {% load static %}
+
+    <!-- NavBar -->
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -53,8 +56,7 @@
                             <div class="input-group">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Search . . . " aria-label="Search" name="search">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-success" type="submit"><i
-                                            class="glyphicon glyphicon-search"></i></button>
+                                    <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -78,6 +80,9 @@
             </div>
         </div>
     </nav>
+
+    <!-- Welcome Message and Translator -->
+
     <div class="row">
         <div class="col-md-11">
             <div class="alert alert-danger alert-dismissible text-center" style="margin-top: 3.3em;color: white; background-color: #f4511e; border-color: #f4511e;">
@@ -104,6 +109,9 @@
             <iframe frameborder="0" style="visibility:visible" src="javascript:''" class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
         </div>
     </div>
+
+    <!-- Carousel -->
+
     <div class="container-fluid" id='home' style="padding: 70px 50px;">
         <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
             <!-- Indicators -->
@@ -140,9 +148,7 @@
         </div>
     </div>
 
-    <!-- <div id="deals"></div>
-    <h1 style="color:#f4511e;font-size: 60px; letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Today's Deal - Recommended for you</i></h1> -->
+    <!-- Today's Deals -->
 
     <img src="static/user/img/deals.png" id="deals" style="padding-top: 30px;" class="mx-auto d-block">
 
@@ -153,133 +159,8 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del></p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del></p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. S9uper slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del></p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="static/user/img/jeans.jfif" alt="Denim Jeans" style="width:100%">
-                                <h1>Tailored Jeans</h1>
-                                <p class="price"><strong> ₹ 999 </strong><del> ₹ 1199 </del> </p>
-                                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
-                                </p>
-                                <p><button>Add to Cart</button></p>
-                            </div>
+                        <div class="col-md-4">
+
                         </div>
                     </div>
                 </div>
@@ -297,9 +178,7 @@
         </div>
     </div>
 
-    <!-- <div id="product"></div>
-    <h1 style="color:#f4511e;font-size: 60px; letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Shop By Category</i></h1> -->
+    <!-- Shop By Category -->
 
     <img src="static/user/img/category.png" id="product" style="padding-top: 30px;" class="mx-auto d-block">
 
@@ -347,31 +226,11 @@
                         </div>
                     </a>
                 </div>
-                <!-- <div class="col-lg-4">
-                    <div class="single-banner">
-                        <a href="#"> <img src="static/user/img/toys.jpg" alt="">
-                            <div class="inner-text">
-                                <h4>Toys</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <a href="#"> <img src="static/user/img/shoes.jpg" alt="">
-                            <div class="inner-text">
-                                <h4>Footwear</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
 
-    <!-- <div id="store"></div>
-    <h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Popular Store</i></h1><br> -->
+    <!-- Popular Store -->
 
     <img src="static/user/img/store.png" id="store" style="padding-top: 30px;" class="mx-auto d-block">
 
@@ -656,9 +515,7 @@
         </div>
     </section>
 
-    <!-- <div id="about"></div>
-    <h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>About</i></h1><br> -->
+    <!-- About -->
 
     <img src="static/user/img/about.png" id="about" style="padding-top: 30px;" class="mx-auto d-block">
 
@@ -713,10 +570,7 @@
         </div>
     </section>
 
-
-    <!-- <div id="contact"></div>
-    <h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Contact</i></h1><br> -->
+    <!-- Contact -->
 
     <img src="static/user/img/contact.png" id="contact" style="padding-top: 30px;" class="mx-auto d-block">
 
@@ -732,7 +586,7 @@
             <div class="row">
                 <div class="col-md-6 wow fadeInLeft animated">
                     <div class="left-content">
-                        <h1><span>M</span>art</h1>
+                        <h2><span>local FOR vocals</span></h2>
                         <h3>We'd love To Meet You In Person Or Via The Web!</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo
                             erat.
@@ -763,19 +617,19 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Email">
+                                    <input type="text" class="form-control" id="email" placeholder="Your Email">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Website URL">
+                                    <input type="contact" class="form-control" id="contact" maxlength="11" placeholder="Contact" pattern="[0-9]{5}[ ][0-9]{5}" required>
                                 </div>
                             </div>
                         </div>
@@ -798,6 +652,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Slide UP -->
 
     <footer class="container-fluid text-center">
         <a href="#myPage" title="To Top">
@@ -849,6 +705,7 @@
             typeSpeed: 150,
             loop: true,
         });
+
     </script>
 
 </body>

@@ -7,17 +7,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Store</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="static/user/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/user/index.css" type="text/css">
     <style>
-        .titlename {
-            font-size: 40px;
-            letter-spacing: 15px;
-            text-decoration: underline;
+        /* card */
+        .dress-card-img-top {
+            width: 100%;
+            border-radius: 7px 7px 0 0;
+        }
+
+        .dress-card-body {
+            padding: 1rem;
+            background: #fff;
+            border-radius: 0 0 7px 7px;
+        }
+
+        .dress-card-title {
+            line-height: 0.5rem;
+        }
+
+        .dress-card-crossed {
+            text-decoration: line-through;
+        }
+
+        .dress-card-price {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .dress-card-off {
+            color: #f4511e;
+        }
+
+        .dress-card-para {
+            margin-bottom: 0.2rem;
+            font-size: 1.0rem;
+            margin-bottom: 0rem;
+        }
+
+        .dress-card {
+            border-radius: 14px;
+        }
+
+        .dress-card-heart {
+            font-size: 1em;
+            color: #f4511e;
+            margin: 4.5px;
+            position: absolute;
+            left: 4px;
+            top: 0px;
+
+        }
+
+        .surprise-bubble {
+            position: absolute;
+            bottom: 12rem;
+            right: 2rem;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            padding: 1rem;
+            color: white;
+            -webkit-transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .surprise-bubble a {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            font-family: arial;
+            text-decoration: none;
+            position: absolute;
+            top: 9px;
+            left: 20px;
+            opacity: 0;
+            -webkit-transition-delay: 2s;
+            /* Safari */
+            transition-delay: 2s;
+            -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .surprise-bubble:hover {
+            border-radius: 999rem;
+            padding: 1rem;
+            width: 26%;
+            height: 30px;
+            background: #f4511e;
+            color: white;
+            -webkit-transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .surprise-bubble:hover a {
+            opacity: 1;
+            -webkit-transition-delay: 2s;
+            /* Safari */
+            transition-delay: 2s;
+            -webkit-transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .card-button {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 15px;
+            padding: 9px;
+        }
+
+        .card-button a {
+            text-decoration: none;
+        }
+
+        .card-button-inner {
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        .bag-button {
+            background: #f4511e;
+            color: white;
+        }
+
+        .bag-button :hover {
+            background: #e299b9;
+        }
+
+        .wish-button {
+            border: 1px solid #f4511e;
+            color: #f4511e;
         }
     </style>
 </head>
@@ -25,70 +152,92 @@
 <body>
     {% load static %}
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f4511e;">
-        <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
-          <span class="navbar-toggler-icon "></span>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f4511e;padding: 0rem 1rem;">
+        <a class="navbar-brand" href="/static/user/img/logo1.png"><img src="/static/user/img/logo1.png"
+                style="width:265px;height:44px"></a>
+        <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent "
+            aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+            <span class="navbar-toggler-icon "></span>
         </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent ">
             <ul class="navbar-nav mr-auto ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="/">Home </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="/#about ">About US</a>
+                    <a class="nav-link " style="color:white;" href="/#about ">About</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="/#contact ">Contact</a>
+                    <a class="nav-link " style="color:white;" href="/#contact ">Contact</a>
                 </li>
-
-                <!-- <div id="google_translate_element "></div>
-
-                <script type="text/javascript ">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({
-                            pageLanguage: 'en',
-                            includedLanguages: 'hi,pa,gu,kn,mr,or,ta,sd,te,ur',
-                        }, 'google_translate_element');
-                    }
-                </script>
-
-                <script type="text/javascript " src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit "></script> -->
             </ul>
-
-            <form class="form-inline my-2 my-lg-0 ">
-                <input class="form-control mr-sm-2 " type="search " placeholder="Search " aria-label="Search ">
-                <button class="btn btn-outline-success my-2 my-sm-0 " type="submit ">Search</button>
-            </form>
+            <div class="input-group col-md-3">
+                <input class="form-control py-2" type="search" placeholder="Search . . ." id="example-search-input">
+                <span class="input-group-append">
+                    <button class="btn btn-success" type="button">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </button>
+                </span>
+            </div>
+            <ul class="navbar-nav mr-right ">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="/Login/">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        SignIN
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " style="color:white;" href="#">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        Cart (0)
+                    </a>
+                </li>
+            </ul>
         </div>
+
     </nav>
 
-    <h1 class="text-center titlename ">{{product.0.category}}</h1>
     <section class="text-gray-700 body-font ">
         <div class="container-fluid px-5 py-24 mx-auto " style="padding-top: 4rem; padding-bottom: 2rem; ">
             <div class="flex flex-wrap -m-4 ">
                 {% for j in product %}
                 <div class="p-4 md:w-1/4 ">
                     <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden ">
-                        <a href="/media/{{j.image}} "><img class="lg:h-48 md:h-36 w-full object-cover object-center " src="/media/{{j.image}} " alt="blog "></a>
+                        <a href="/media/{{j.image}} "><img class="lg:h-48 md:h-36 w-full object-cover object-center "
+                                src="/media/{{j.image}} " alt="blog "></a>
                         <div class="p-6 ">
-                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1 ">CATEGORY : {{j.category}}</h2>
-                            <h1 style="display: inline; " class="title-font text-lg font-medium text-gray-900 mb-3 ">{{j.name}}</h1>
-                            <button class="rounded-full float-right w-10 h-10 bg-gray-200 p-0 border-0 btn-outline-danger inline-flex items-center justify-center text-gray-500 ml-4 ">
-                                <svg fill="currentColor " stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " class="w-5 h-5 " viewBox="0 0 24 24 ">
-                                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z "></path>
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1 ">
+                                {{j.category}}</h2>
+                            <h1 style="display: inline; " class="title-font text-lg font-medium text-gray-900 mb-3 ">
+                                {{j.name}}</h1>
+                            <button
+                                class="rounded-full float-right w-10 h-10 bg-gray-200 p-0 border-0 btn-outline-danger inline-flex items-center justify-center text-gray-500 ml-4 ">
+                                <svg fill="currentColor " stroke-linecap="round " stroke-linejoin="round "
+                                    stroke-width="2 " class="w-5 h-5 " viewBox="0 0 24 24 ">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z ">
+                                    </path>
                                 </svg>
                             </button>
                             <p class="leading-relaxed mb-3 ">{{j.desc}}</p>
                             <div class="flex items-center flex-wrap ">
-                                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 " href="storeinfo/{{j.id}} ">View More
-                                    <svg class="w-4 h-4 ml-2 " viewBox="0 0 24 24 " stroke="currentColor " stroke-width="2 "
-                                        fill="none " stroke-linecap="round " stroke-linejoin="round ">
+                                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 "
+                                    href="storeinfo/{{j.id}} ">View More
+                                    <svg class="w-4 h-4 ml-2 " viewBox="0 0 24 24 " stroke="currentColor "
+                                        stroke-width="2 " fill="none " stroke-linecap="round " stroke-linejoin="round ">
                                         <path d="M5 12h14 "></path>
                                         <path d="M12 5l7 7-7 7 "></path>
                                     </svg>
                                 </a>
-                                <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300 ">
+                                <span
+                                    class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300 ">
                                     <svg class="w-4 h-4 mr-1 " stroke="currentColor " stroke-width="2 " fill="none "
                                         stroke-linecap="round " stroke-linejoin="round " viewBox="0 0 24 24 ">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z "></path>
@@ -127,13 +276,146 @@
         </ul>
     </nav><br> {% endif %}
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="dress-card">
+                    <div class="dress-card-head">
+                        <img class="dress-card-img-top"
+                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
+                            alt="">
+                        <div class="surprise-bubble"><span class="dress-card-heart">
+                                <i class="fa fa-heart"></i>
+                            </span><a href="#"> <span>More</span></a></div>
+                    </div>
+                    <div class="dress-card-body">
+                        <h4 class="dress-card-title">Harpa</h4>
+                        <p class="dress-card-para">Womans printed clothing</p>
+                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                OFF)</span></p>
+                        <div class="row">
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                                </a></div>
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner wish-button">Whishlist</div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dress-card">
+                    <div class="dress-card-head">
+                        <img class="dress-card-img-top"
+                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
+                            alt="">
+                        <div class="surprise-bubble"><span class="dress-card-heart">
+                                <i class="fa fa-heart"></i>
+                            </span><a href="#"> <span>More</span></a></div>
+                    </div>
+                    <div class="dress-card-body">
+                        <h4 class="dress-card-title">Harpa</h4>
+                        <p class="dress-card-para">Womans printed clothing</p>
+                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                OFF)</span></p>
+                        <div class="row">
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                                </a></div>
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner wish-button">Whishlist</div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dress-card">
+                    <div class="dress-card-head">
+                        <img class="dress-card-img-top"
+                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
+                            alt="">
+                        <div class="surprise-bubble"><span class="dress-card-heart">
+                                <i class="fa fa-heart"></i>
+                            </span><a href="#"> <span>More</span></a></div>
+                    </div>
+                    <div class="dress-card-body">
+                        <h4 class="dress-card-title">Harpa</h4>
+                        <p class="dress-card-para">Womans printed clothing</p>
+                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                OFF)</span></p>
+                        <div class="row">
+                            <div class="col-md-6 card-button">
+                                <a href="">
+                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner wish-button">Whishlist</div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dress-card">
+                    <div class="dress-card-head">
+                        <img class="dress-card-img-top"
+                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
+                            alt="">
+                        <div class="surprise-bubble"><span class="dress-card-heart">
+                                <i class="fa fa-heart"></i>
+                            </span><a href="#"> <span>More</span></a></div>
+                    </div>
+                    <div class="dress-card-body">
+                        <h4 class="dress-card-title">Harpa</h4>
+                        <p class="dress-card-para">Womans printed clothing</p>
+                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                OFF)</span></p>
+                        <div class="row">
+                            <div class="col-md-6 card-button">
+                                <a href="">
+                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button"><a href="">
+                                    <div class="card-button-inner wish-button">Whishlist</div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        vw = $(window).outerWidth();
+
+        $('#cart').click(flip);
+
+        function flip() {
+            $('#cart').addClass('flipped');
+            $('#cart').addClass('added');
+            $('.backside').addClass('show');
+            $('.front').addClass('hide');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous ">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js "
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous ">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous ">
+    </script>
 </body>
-
-</html>
-
-</html>
 
 </html>

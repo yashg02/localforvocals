@@ -2,141 +2,526 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Store</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/user/index.css" type="text/css">
-    <style>
-        .text-lg {
-            font-size: 1.125rem;
-        }
-        
-        .flex a {
-            text-decoration: none;
-        }
-        
-        .flex a:hover {
-            color: #DD6B20;
-        }
-    </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Store</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/user/index.css" type="text/css">
+  <style>
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .flex a {
+      text-decoration: none;
+    }
+
+    .flex a:hover {
+      color: #DD6B20;
+    }
+
+    .item-size {
+      float: left;
+      display: block;
+      border-right: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 3px 20px;
+      cursor: pointer;
+    }
+
+    .item-size:first-child {
+      border-left: 1px solid #ddd;
+    }
+
+    .size-selected {
+      background: #ddd;
+      -webkit-transition: background 250ms ease-in-out;
+      transition: background 250ms ease-in-out;
+    }
+
+    .heading {
+      font-size: 25px;
+      margin-right: 25px;
+    }
+
+    .fa {
+      font-size: 25px;
+    }
+
+    .checked {
+      color: orange;
+    }
+
+    /* Three column layout */
+    .side {
+      float: left;
+      width: 15%;
+      margin-top: 10px;
+    }
+
+    .middle {
+      margin-top: 10px;
+      float: left;
+      width: 70%;
+    }
+
+    /* Place text to the right */
+    .right {
+      text-align: right;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* The bar container */
+    .bar-container {
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      color: white;
+    }
+
+    /* Individual bars */
+    .bar-5 {
+      width: 60%;
+      height: 18px;
+      background-color: #4CAF50;
+    }
+
+    .bar-4 {
+      width: 30%;
+      height: 18px;
+      background-color: #2196F3;
+    }
+
+    .bar-3 {
+      width: 10%;
+      height: 18px;
+      background-color: #00bcd4;
+    }
+
+    .bar-2 {
+      width: 4%;
+      height: 18px;
+      background-color: #ff9800;
+    }
+
+    .bar-1 {
+      width: 15%;
+      height: 18px;
+      background-color: #f44336;
+    }
+
+    /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+    @media (max-width: 400px) {
+
+      .side,
+      .middle {
+        width: 100%;
+      }
+
+      .right {
+        display: none;
+      }
+    }
+
+    .colors-list li {
+      display: inline-block;
+      margin-right: 50px;
+      cursor: pointer;
+    }
+
+    .item-color {
+      position: relative;
+    }
+
+    .item-color:before {
+      content: '';
+      position: absolute;
+      background: #ddd;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      z-index: 99;
+    }
+
+    .item-color:after {
+      content: '';
+      border: 2px solid #333;
+      height: 30px;
+      width: 30px;
+      top: -5px;
+      left: -6px;
+      position: absolute;
+      border-radius: 50%;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .item-color:last-child {
+      margin-right: 0;
+    }
+
+    .color-selected .item-color:after {
+      visibility: visible !important;
+      opacity: 1 !important;
+      -webkit-animation: anim-effect-sonar 250ms ease-out forwards;
+      animation: anim-effect-sonar 250ms ease-out forwards;
+    }
+
+    .size-selected {
+      background: #ddd;
+      -webkit-transition: background 250ms ease-in-out;
+      transition: background 250ms ease-in-out;
+    }
+
+    .purple .item-color:before {
+      background: #9c27b0;
+    }
+
+    .red .item-color:before {
+      background: #EA3023;
+    }
+
+    .orange .item-color:before {
+      background: #ff5722;
+    }
+
+    .green .item-color:before {
+      background: #91C519;
+    }
+
+    .color {
+      position: relative;
+    }
+
+    .color input[type=radio] {
+      visibility: hidden;
+    }
+  </style>
 </head>
 
 <body>
-    {% load static %}
-    <section class="text-gray-700 body-font overflow-hidden">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                    <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Animated Night Hill Illustrations</h1>
-                    <div class="flex mb-4">
-                        <span class="flex items-center">
-							<svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-								stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500"
-								viewBox="0 0 24 24">
-								<path
-									d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-								</path>
-							</svg>
-							<svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-								stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500"
-								viewBox="0 0 24 24">
-								<path
-									d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-								</path>
-							</svg>
-							<svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-								stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500"
-								viewBox="0 0 24 24">
-								<path
-									d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-								</path>
-							</svg>
-							<svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-								stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500"
-								viewBox="0 0 24 24">
-								<path
-									d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-								</path>
-							</svg>
-							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-								<path
-									d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-								</path>
-							</svg>
-							<span class="text-gray-600 ml-3">4 Reviews</span>
-                        </span>
-                        <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
-							<a class="text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									class="w-5 h-5" viewBox="0 0 24 24">
-									<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-								</svg>
-							</a>
-							<a class="ml-2 text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									class="w-5 h-5" viewBox="0 0 24 24">
-									<path
-										d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
-									</path>
-								</svg>
-							</a>
-							<a class="ml-2 text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									class="w-5 h-5" viewBox="0 0 24 24">
-									<path
-										d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
-									</path>
-								</svg>
-							</a>
-						</span>
-                    </div>
-                    <div class="flex mb-4">
-                        <a class="flex-grow text-orange-500 border-b-2 border-orange-500 py-2 text-lg px-1">Description</a>
-                        <a class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Reviews</a>
-                        <a class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Details</a>
-                    </div>
-                    <p class="leading-relaxed mb-4">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle
-                        austin listicle pour-over, neutra jean.</p>
-                    <div class="flex border-t border-gray-300 py-2">
-                        <span class="text-gray-500">Color</span>
-                        <span class="ml-auto text-gray-900">Blue</span>
-                    </div>
-                    <div class="flex border-t border-gray-300 py-2">
-                        <span class="text-gray-500">Size</span>
-                        <span class="ml-auto text-gray-900">Medium</span>
-                    </div>
-                    <div class="flex border-t border-b mb-6 border-gray-300 py-2">
-                        <span class="text-gray-500">Quantity</span>
-                        <span class="ml-auto text-gray-900">4</span>
-                    </div>
-                    <div class="flex">
-                        <span class="title-font font-medium text-2xl text-gray-900">$58.00</span>
-                        <button class="flex ml-auto text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded">Add To Cart</button>
-                        <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 btn-outline-danger inline-flex items-center justify-center text-gray-500 ml-4">
-                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+  {% load static %}
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f4511e;padding: 0rem 1rem;">
+    <a class="navbar-brand" href="/static/user/img/logo1.png"><img src="/static/user/img/logo1.png"
+        style="width:265px;height:44px"></a>
+    <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent "
+      aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item">
+          <a class="nav-link" style="color:white;" href="/">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link " style="color:white;" href="/#about ">About</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link " style="color:white;" href="/#contact ">Contact</a>
+        </li>
+      </ul>
+
+      <div class="input-group col-md-3">
+        <input class="form-control py-2" type="search" placeholder="Search . . ." id="example-search-input">
+        <span class="input-group-append">
+          <button class="btn btn-success" type="button">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+              <path fill-rule="evenodd"
+                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+            </svg>
+          </button>
+        </span>
+      </div>
+      <ul class="navbar-nav mr-right ">
+        <li class="nav-item">
+          <a class="nav-link" style="color:white;" href="/Login/">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            SignIN
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link " style="color:white;" href="#">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            Cart (0)
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="text-gray-700 body-font overflow-hidden">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-4/5 mx-auto flex flex-wrap">
+        <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+          <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
+          <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Animated Night Hill Illustrations</h1>
+          <div class="flex mb-4">
+            <span class="flex items-center">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <span class="text-gray-600 ml-3">4 Reviews</span>
+            </span>
+            <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-2 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                  </path>
+                </svg>
+              </a>
+              <a class="ml-2 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                  </path>
+                </svg>
+              </a>
+            </span>
+          </div>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu1">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu2">Details</a>
+            </li>
+          </ul><br>
+          <div class="tab-content">
+            <div id="home" class="container tab-pane active">
+              <p class="leading-relaxed mb-4">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha
+                taximy chia microdosing tilde DIY. XOXO fam inxigo juiceramps cornhole raw denim forage brooklyn.
+                Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean.
+              </p>
+              <div class="flex border-t border-gray-300 py-2">
+                <span class="text-gray-500">Color</span>
+                <span class="ml-auto text-gray-900">
+                  <div class="color">
+                    <ul class="colors-list">
+                      <li class="silver color-selected">
+                        <div class="item-color">
+                          <input type="radio" />
+                        </div>
+                      </li>
+                      <li class="purple">
+                        <div class="item-color">
+                          <input type="radio" />
+                        </div>
+                      </li>
+                      <li class="red">
+                        <div class="item-color">
+                          <input type="radio" />
+                        </div>
+                      </li>
+                      <li class="orange">
+                        <div class="item-color">
+                          <input type="radio" />
+                        </div>
+                      </li>
+                      <li class="green">
+                        <div class="item-color">
+                          <input type="radio" />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </span>
+              </div>
+              <div class="flex border-t border-gray-300 py-2">
+                <span class="text-gray-500">Size</span>
+                <span class="ml-auto text-gray-900">
+                  <div class="size">
+                    <ul class="sizes-list">
+                      <li class="item-size size-selected">S</li>
+                      <li class="item-size">M</li>
+                      <li class="item-size">L</li>
+                      <li class="item-size">XL</li>
+                    </ul>
+                  </div>
+                </span>
+              </div>
+              <div class="flex border-t d-flex justify-content-center border-b mb-6 border-gray-300 py-2">
+                <span class="text-gray-500">---- IN STOCK ----</span>
+                <!--                        <span class="ml-auto text-gray-900">4</span>-->
+              </div>
+              <div class="flex">
+                <span class="title-font font-medium text-2xl text-gray-900">₹ 58.00</span>
+                <button
+                  class="flex ml-auto text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded">Add
+                  To Cart</button>
+                <button
+                  class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 btn-outline-danger inline-flex items-center justify-center text-gray-500 ml-4">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
+                    </path>
                   </svg>
                 </button>
-                    </div>
-                </div>
-                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400">
+              </div>
             </div>
+            <div id="menu1" class="container tab-pane fade">
+              <span class="heading">User Rating</span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p>4.1 average based on 254 reviews.</p>
+              <hr style="border:3px solid #f1f1f1">
+
+              <div class="row">
+                <div class="side">
+                  <div>5 star</div>
+                </div>
+                <div class="middle">
+                  <div class="bar-container">
+                    <div class="bar-5"></div>
+                  </div>
+                </div>
+                <div class="side right">
+                  <div>150</div>
+                </div>
+                <div class="side">
+                  <div>4 star</div>
+                </div>
+                <div class="middle">
+                  <div class="bar-container">
+                    <div class="bar-4"></div>
+                  </div>
+                </div>
+                <div class="side right">
+                  <div>63</div>
+                </div>
+                <div class="side">
+                  <div>3 star</div>
+                </div>
+                <div class="middle">
+                  <div class="bar-container">
+                    <div class="bar-3"></div>
+                  </div>
+                </div>
+                <div class="side right">
+                  <div>15</div>
+                </div>
+                <div class="side">
+                  <div>2 star</div>
+                </div>
+                <div class="middle">
+                  <div class="bar-container">
+                    <div class="bar-2"></div>
+                  </div>
+                </div>
+                <div class="side right">
+                  <div>6</div>
+                </div>
+                <div class="side">
+                  <div>1 star</div>
+                </div>
+                <div class="middle">
+                  <div class="bar-container">
+                    <div class="bar-1"></div>
+                  </div>
+                </div>
+                <div class="side right">
+                  <div>20</div>
+                </div>
+              </div>
+            </div>
+            <div id="menu2" class="container tab-pane fade">
+
+            </div>
+          </div>
         </div>
-    </section>
+        <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+          src="https://dummyimage.com/400x400">
+      </div>
+    </div>
+  </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script>
+    function openCity(cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(cityName).style.display = "block";
+    }
 
+    $(document).ready(function () {
+
+      // Color
+      $(".colors-list li").click(function () {
+        $(this).addClass("color-selected").siblings(".colors-list li").removeClass("color-selected");
+      });
+
+      // Size
+      $(".sizes-list li").click(function () {
+        $(this).addClass("size-selected").siblings(".sizes-list li").removeClass("size-selected");
+      });
+    });
+  </script>
 </body>
-
-</html>
-
 </html>

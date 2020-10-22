@@ -26,7 +26,8 @@ def search(request):
 
 def store(request, cat):
     product=channel.objects.filter(category=cat)
-    params = {'product': product[::-1]}
+    n=len(product)
+    params = {'product': product[::-1], 'n': n}
     return render(request, 'user/store.html', params)
 
 def storeinfo(request, myid):
@@ -44,7 +45,8 @@ def business(request):
     return render(request, 'user/business.html')
 
 def prod(request):
-    return render(request, 'user/prodview.html')
+    color = {'color1':'black'}
+    return render(request, 'user/prodview.html', color)
 
 def product(request):
     return render(request, 'user/addproduct.html')

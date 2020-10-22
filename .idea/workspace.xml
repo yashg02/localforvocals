@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bffd144-aa63-4e35-b813-6b6b1d581a3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/localforvocals.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/localforvocals.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/static/user/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/static/user/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/prodview.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/prodview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/storeinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/storeinfo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/user/templates/user/index.html" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1j0Fc26xmAGujdID53DYphFUxhn" />
   <component name="ProjectLevelVcsManager">
