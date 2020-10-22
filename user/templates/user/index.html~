@@ -555,7 +555,7 @@
         <div id="about"></div>
         <!--<h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
         <br><i>About</i></h1><br> -->
-        <h1 class="band-name band-name-large text-dark"><br>About<br></h1>
+        <h1 class="band-name band-name-large text-dark"><br>About<br><br></h1>
 
         <section class="client_review">
             <div class="container">

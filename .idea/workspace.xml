@@ -21,11 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8bffd144-aa63-4e35-b813-6b6b1d581a3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/codropsicons/codropsicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/codropsicons/codropsicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/feathericons/feathericons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/feathericons/feathericons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/static/user/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user/static/user/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/static/user/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/prodview.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/prodview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/storeinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/storeinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

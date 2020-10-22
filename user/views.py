@@ -51,6 +51,9 @@ def prod(request):
 def product(request):
     return render(request, 'user/addproduct.html')
 
+def cart(request):
+    return render(request, 'user/cart.html')
+
 def handleSignup(request):
     if request.method == 'POST':
 

@@ -69,6 +69,10 @@ body {
     color: #fff !important;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
 /* Navbar Category Dropdown */
 
 .dropdown {
