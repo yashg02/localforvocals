@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.band-name {
+    text-align: center;
+    margin: 0;
+    font-size: 7rem !important;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color:#f4511e !important;
+}
+
+.band-name-large {
+    font-size: 7rem !important;
+}
+
+#content{display:none;}
+
+#loader{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 200px;
+	height: 200px;
+}
+
+#loader img{width:200px;}
+
+
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
