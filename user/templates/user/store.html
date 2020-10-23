@@ -15,138 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/user/index.css" type="text/css">
-    <style>
-        /* card */
-        .dress-card-img-top {
-            width: 100%;
-            border-radius: 7px 7px 0 0;
-        }
-
-        .dress-card-body {
-            padding: 1rem;
-            background: #fff;
-            border-radius: 0 0 7px 7px;
-        }
-
-        .dress-card-title {
-            line-height: 0.5rem;
-        }
-
-        .dress-card-crossed {
-            text-decoration: line-through;
-        }
-
-        .dress-card-price {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .dress-card-off {
-            color: #f4511e;
-        }
-
-        .dress-card-para {
-            margin-bottom: 0.2rem;
-            font-size: 1.0rem;
-            margin-bottom: 0rem;
-        }
-
-        .dress-card {
-            border-radius: 14px;
-        }
-
-        .dress-card-heart {
-            font-size: 1em;
-            color: #f4511e;
-            margin: 4.5px;
-            position: absolute;
-            left: 4px;
-            top: 0px;
-
-        }
-
-        .surprise-bubble {
-            position: absolute;
-            bottom: 12rem;
-            right: 2rem;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            background: #fff;
-            padding: 1rem;
-            color: white;
-            -webkit-transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        .surprise-bubble a {
-            font-size: 0.65em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: white;
-            font-family: arial;
-            text-decoration: none;
-            position: absolute;
-            top: 9px;
-            left: 20px;
-            opacity: 0;
-            -webkit-transition-delay: 2s;
-            /* Safari */
-            transition-delay: 2s;
-            -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        .surprise-bubble:hover {
-            border-radius: 999rem;
-            padding: 1rem;
-            width: 26%;
-            height: 30px;
-            background: #f4511e;
-            color: white;
-            -webkit-transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        .surprise-bubble:hover a {
-            opacity: 1;
-            -webkit-transition-delay: 2s;
-            /* Safari */
-            transition-delay: 2s;
-            -webkit-transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        .card-button {
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 15px;
-            padding: 9px;
-        }
-
-        .card-button a {
-            text-decoration: none;
-        }
-
-        .card-button-inner {
-            padding: 10px;
-            border-radius: 3px;
-        }
-
-        .bag-button {
-            background: #f4511e;
-            color: white;
-        }
-
-        .bag-button :hover {
-            background: #e299b9;
-        }
-
-        .wish-button {
-            border: 1px solid #f4511e;
-            color: #f4511e;
-        }
-    </style>
 </head>
 
 <body>
@@ -163,13 +31,13 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent ">
             <ul class="navbar-nav mr-auto ">
                 <li class="nav-item">
-                    <a class="nav-link" style="color:white;" href="/">Home </a>
+                    <a class="nav-link" style="color:white;" href="/">HOME</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#about ">About</a>
+                    <a class="nav-link " style="color:white;" href="/#about ">ABOUT</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#contact ">Contact</a>
+                    <a class="nav-link " style="color:white;" href="/#contact ">CONTACT</a>
                 </li>
             </ul>
             <div class="input-group col-md-3">
@@ -204,7 +72,7 @@
 
     </nav>
 
-    <section class="text-gray-700 body-font ">
+    <!-- <section class="text-gray-700 body-font ">
         <div class="container-fluid px-5 py-24 mx-auto " style="padding-top: 4rem; padding-bottom: 2rem; ">
             <div class="flex flex-wrap -m-4 ">
                 {% for j in product %}
@@ -274,10 +142,10 @@
             </li>
 
         </ul>
-    </nav><br> {% endif %}
+    </nav><br> {% endif %} -->
 
 
-    <div class="container">
+    <div class="container" style="padding: 70px;">
         <div class="row">
             <div class="col-md-3">
                 <div class="dress-card">
@@ -287,14 +155,18 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="#"> <span>More</span></a></div>
+                            </span><a href="storeinfo/prodview/"> <span>More</span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
                         <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
+                        <p class="dress-card-para">
+                            <span class="dress-card-price">Rs.839 &ensp;</span>
+                            <span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                OFF)
+                            </span>
+                        </p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/12">Yash</a></p>
                         <div class="row">
                             <div class="col-md-6 card-button"><a href="">
                                     <div class="card-button-inner bag-button">Add to Bag</div>
@@ -322,6 +194,7 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/13">Chirag</a></p>
                         <div class="row">
                             <div class="col-md-6 card-button"><a href="">
                                     <div class="card-button-inner bag-button">Add to Bag</div>
@@ -349,6 +222,7 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/14">Aakash</a></p>
                         <div class="row">
                             <div class="col-md-6 card-button">
                                 <a href="">
@@ -378,6 +252,7 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/15">Amithesh</a></p>
                         <div class="row">
                             <div class="col-md-6 card-button">
                                 <a href="">
@@ -395,18 +270,22 @@
         </div>
 
     </div>
-    <script>
-        vw = $(window).outerWidth();
 
-        $('#cart').click(flip);
+    <nav aria-label="Page navigation example ">
+        <ul class="pagination justify-content-center ">
+            <li class="page-item disabled ">
+                <a class="page-link " href="# " tabindex="-1 ">Previous</a>
+            </li>
+            <li class="page-item active "><a class="page-link " href="# ">1</a></li>
+            <li class="page-item "><a class="page-link " href="# ">2</a></li>
+            <li class="page-item "><a class="page-link " href="# ">3</a></li>
+            <li class="page-item ">
+                <a class="page-link " href="# ">Next</a>
+            </li>
 
-        function flip() {
-            $('#cart').addClass('flipped');
-            $('#cart').addClass('added');
-            $('.backside').addClass('show');
-            $('.front').addClass('hide');
-        }
-    </script>
+        </ul>
+    </nav><br>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous ">
     </script>

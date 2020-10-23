@@ -21,7 +21,7 @@ def search(request):
     prod = [item for item in product if searchMatch(query, item)]
     n = len(prod)
     params = {'product': prod, 'n': n}
-    return render(request, 'user/store.html', params)
+    return render(request, 'user/search.html', params)
 
 
 def store(request, cat):
