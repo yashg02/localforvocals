@@ -24,7 +24,7 @@
     <div id="loader"><img src="static/user/img/load2.gif" /></div>
     <div id="content">
         <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
+            <div class="container-fluid" style="margin-bottom: 10px">
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-left">
                         <a href="static/user/img/logo1.png"><img src="static/user/img/logo1.png" style="width:265px;height:44px"></a>
@@ -59,15 +59,12 @@
                             </form>
                         </li>
                         {% if user.is_authenticated %}
-                        <ul class="navbar-nav ml-auto" style="margin-top: 15px;">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Welcome {{request.user}}
+                        <ul class="navbar-nav ml-auto" style="margin-top: 15px">
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:white;" href="/logout">
+                                    <!-- <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                                    {{request.user}}
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/logout">Logout</a>
-                                </div>
                             </li>
                         </ul>
                         {% else %}

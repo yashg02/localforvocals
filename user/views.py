@@ -65,7 +65,7 @@ def handleSignup(request):
 
         #Checks for erroneous inputs
 
-        #Username lenght check
+        #Username length check
         if len(username) > 10:
             messages.error(request, 'Username too long')
             return redirect('home')
@@ -116,3 +116,16 @@ def handleLogout(request):
     logout(request)
     messages.success(request, "Successfully Logged Out")
     return redirect('home')
+
+def addprod(request):
+    if request.method == 'POST':
+        name = request.POST.get('storename', '')
+        category = request.POST.get('category', '')
+        desc = request.POST.get('desc', '')
+        image = request.POST.get('image', '')
+        Channel = channel(name=name, category=category, desc=desc, image=image)
+        Channel.save()
+        return redirect('home')
+
+    return HttpResponse('404 - NOT FOUND')
+

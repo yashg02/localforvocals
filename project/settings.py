@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -26,6 +25,21 @@ SECRET_KEY = '*&4&ty3_10g=df3)3sbpe+7qqmz3$tni8f3gk*0ug6^nap^0(7'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
+# Email SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'gmail'
+
+EMAIL_HOST_PASSWORD = 'pass'
+
+EMAIL_PORT = 587
+
+##EMAIL_USE_TLS = False
 
 
 # Application definition

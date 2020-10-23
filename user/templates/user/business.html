@@ -31,34 +31,35 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 form-box">
                 <h1 class="text-center">Store SignUP</h1>
-                <form onsubmit="return checkForm(this);" action="signup.php" method="POST">
+                <form action="/addprod" method="POST">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label>Name:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="name" type="text" class="form-control" placeholder="Enter Name of the Store" required>
+                            <input name="storename" id="storename" type="text" class="form-control" placeholder="Enter Name of the Store" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Choose a Category:</label>
                         <div class="radio">
-                            <label><input type="radio" name="category" required>Fashion</label>
+                            <label><input type="radio" name="category" id="category" required>Fashion</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category">Handloom</label>
+                            <label><input type="radio" name="category" id="category">Handloom</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category">Crockery</label>
+                            <label><input type="radio" name="category" id="category">Crockery</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category">Toys</label>
+                            <label><input type="radio" name="category" id="category">Toys</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Add Display Image:</label>
-                        <input type="file" class="form-control-file" name="image">
+                        <input type="file" class="form-control-file" id="image" name="image">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="desc" name="desc">
                         <label>Description:</label>
                         <textarea class="form-control" rows="2" placeholder="Write Here..." name="ingredients" required></textarea>
                     </div>
@@ -93,7 +94,7 @@
                     <input type="submit" class="btn btn-success" name="register" value="Submit">
                     <input type="reset" value="Reset" class="btn btn-danger">
                     <button class="btn btn-default" style="background-color: black;">
-                        <a href="/" style="text-decoration: none;color:white">Home</a>
+                        <a href="/" style="text-decoration: none; color: white">Home</a>
                     </button>
                 </form>
             </div>
