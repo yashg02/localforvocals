@@ -61,6 +61,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pbl" />
   </component>
   <component name="RecentsManager">
@@ -71,6 +72,10 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Chirag Bhagat\Desktop\localforvocals\user\static\user\img" />
     </key>
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+>>>>>>> Stashed changes
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,6 +88,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< Updated upstream
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
@@ -108,5 +114,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1603039520592" />
+=======
+  <component name="WindowStateProjectService">
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1603347581773">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603347581773" />
+    <state x="414" y="58" width="980" height="707" key="SettingsEditor" timestamp="1603131583392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="414" y="58" width="980" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603131583392" />
+>>>>>>> Stashed changes
   </component>
 </project>
