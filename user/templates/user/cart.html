@@ -110,7 +110,10 @@ h2 {
     </style>
 </head>
 
+
+
 <body class="bg-light">
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 col-11 mx-auto">
@@ -239,6 +242,10 @@ h2 {
                                 <p>Shipping Charge</p>
                                 <p>₹<span id="shipping_charge">50.0</span></p>
                             </div>
+                            <div class="price_indiv d-flex justify-content-between">
+                                <p>Coupon Code</p>
+                                <p>₹<span id="coupon_valid">0.00</span></p>
+                            </div>
                             <hr />
                             <div class="total-amt d-flex justify-content-between font-weight-bold">
                                 <p>The total amount of (including GST)</p>
@@ -263,7 +270,7 @@ h2 {
                                             <small id="error_trw" class="text-dark mt-3">code is TCET</small>
                                         </div>
                                         <button class="btn btn-primary btn-sm mt-3"
-                                            onclick="discount_code()">Apply</button>
+                                            onclick="discount_code();changeText();couponClicked();changeColor()">Apply</button>
                                     </div>
                                 </div>
                             </div>
@@ -295,6 +302,21 @@ h2 {
 
     <script type="text/javascript">
 
+var down_1= document.getElementById('collapseExample');
+
+    function changeText(){
+    down_1.innerHTML="Coupon Applied!!!";
+        }
+        var coup= document.getElementById('coupon_valid');
+        function couponClicked(){
+        coup.innerHTML="-50.0";
+        }
+        function changeColor() {
+    document.getElementById('collapseExample').style.cssText = 'color:green';//background-color:red'
+}
+
+
+
         var product_total_amt = document.getElementById('product_total_amt');
         var shipping_charge = document.getElementById('shipping_charge');
         var total_cart_amt = document.getElementById('total_cart_amt');
@@ -311,8 +333,8 @@ h2 {
                 itemval.value = parseInt(itemval.value) - 1;
                 itemval.style.background = '#fff';
                 itemval.style.color = '#000';
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 200;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 200;
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 250;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 250;
                 total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
             }
         }
@@ -348,5 +370,4 @@ h2 {
         }
     </script>
 </body>
-
 </html>
