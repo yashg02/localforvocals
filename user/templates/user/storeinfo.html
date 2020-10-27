@@ -7,99 +7,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/user/index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <title>Store Info</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+        .header {
+            min-height: 60vh;
+            /* background: #009FFF; */
+            background: #f4511e;
+            color: white;
+            clip-path: ellipse(100vw 60vh at 50% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .profile-pic {
+            height: 6rem;
+            width: 6rem;
+            object-fit: center;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .location p {
+            display: inline-block;
+        }
+
+        .location svg {
+            vertical-align: middle;
+        }
+
+        .stats {
+            display: flex;
+        }
+
+        .stats .col-4 {
+            width: 10rem;
+            text-align: center;
+        }
+
+        .heading {
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            padding: 0;
+        }
+
+        .buttons {
+            display: flex;
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px 30px 50px;
+        }
+
+        .follow-me {
+            width: 50%;
+            position: relative;
+            padding: 18px 10px 18px 10px;
+            border: solid gray 1px;
+            border-radius: 50px;
+            background-color: #408afa;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 12px;
+            margin-left: 83px;
+        }
+
+        .follow-me:hover {
+            background-color: lime;
+            color: black;
+            border-color: lime;
+        }
+
+        .category {
+            margin: -10px;
+        }
+
+        .bio p {
+            padding: 0px;
+        }
+
+        .band-name-large {
+            font-size: 6rem !important;
+        }
+    </style>
 </head>
 
 <body>
     {% load static %}
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f4511e;padding: 0rem 1rem;">
-        <a class="navbar-brand" href="/static/user/img/logo1.png"><img src="/static/user/img/logo1.png" style="width:265px;height:44px"></a>
-        <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
-          <span class="navbar-toggler-icon "></span>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0;">
+        <a class="navbar-brand" style="padding:0;" href="/static/user/img/logo1.png"><img
+                src="/static/user/img/logo1.png" style="width:265px;height:44px"></a>
+        <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent "
+            aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+            <span class="navbar-toggler-icon "></span>
         </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent ">
             <ul class="navbar-nav mr-auto ">
-                <li class="nav-item" >
-                    <a class="nav-link" style="color:white;" href="/">HOME</a>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/">HOME</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#about ">ABOUT</a>
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#about ">ABOUT</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#contact ">CONTACT</a>
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#contact ">CONTACT</a>
                 </li>
             </ul>
-
             <div class="input-group col-md-3">
                 <input class="form-control py-2" type="search" placeholder="Search . . ." id="example-search-input">
                 <span class="input-group-append">
-                <button class="btn btn-success" type="button">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                    </svg>
-                </button>
+                    <button class="btn btn-success" type="button">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </button>
                 </span>
             </div>
             <ul class="navbar-nav mr-right ">
-                <li class="nav-item text-nowrap">
-                    <a class="nav-link" style="color:white;" href="/">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
-                        Sign out
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/Login/">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> SignIN
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/signup/business/">
-                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                        Add Product
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/cart">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart (<span id="cart">0</span>)
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <section class="text-gray-700 body-font">
-        <div class="container px-5 py-24 mx-auto flex flex-wrap">
-            <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
-                <div class="w-full sm:p-4 px-4 mb-6">
-                    <h1 class="title-font font-medium text-xl mb-2 text-gray-900">{{product.name}} </h1>
-                    <div class="leading-relaxed">{{product.category}}</div>
-                    <div class="leading-relaxed">About ME: {{product.desc}}</div>
-                    <h6>Created on: {{product.date}}</h6>
+    <section class="profile" style="padding-top: 44px;">
+        <header class="header">
+            <div class="details">
+                <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=b38c22a46932485790a3f52c61fcbe5a"
+                    alt="John Doe" class="profile-pic">
+                <h1 class="heading">Claire Doe</h1>
+                <div class="category">
+                    <p>Fashion</p>
                 </div>
-                <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium text-3xl text-gray-900">2.7K</h2>
-                    <p class="leading-relaxed">Users</p>
+                <div class="bio">
+                    <p>Jos-based UX/UI Designer working on all things graphics</p>
                 </div>
-                <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium text-3xl text-gray-900">1.8K</h2>
-                    <p class="leading-relaxed">Subscribes</p>
+                <div class="buttons">
+                    <button class="follow-me">
+                        Follow
+                    </button>
                 </div>
-                <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium text-3xl text-gray-900">35</h2>
-                    <p class="leading-relaxed">Downloads</p>
-                </div>
-                <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium text-3xl text-gray-900">4</h2>
-                    <p class="leading-relaxed">Products</p>
+                <div class="stats">
+                    <div class="col-4">
+                        <h4>20</h4>
+                        <p>Products</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>100</h4>
+                        <p>Followers</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>10</h4>
+                        <p>Following</p>
+                    </div>
                 </div>
             </div>
-            <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-                <img class="object-cover object-center w-full h-full" src="/media/{{product.image}}" alt="stats">
-            </div>
-        </div>
+        </header>
     </section>
 
-    <h1 class="band-name band-name-large text-dark">Products</h1>
+    <h1 class="band-name band-name-large text-dark" style="padding-top: 40px;">Products</h1>
 
-    <div class="container">
+    <div class="container-fluid" style="padding: 20px 150px;">
         <div class="row">
             <div class="col-md-3">
                 <div class="dress-card">
@@ -109,7 +206,9 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
+                            </span>
+                            <a href=""> <span>Wishlist </span></a>
+                        </div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -120,14 +219,18 @@
                                 OFF)
                             </span>
                         </p>
-                        <p class="dress-card-para">Sold By : <a href="12">Yash</a></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/12">Yash</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <div class="col-md-6 card-button divpr" id="divpr1">
+                                <a href="javascript:void(0)">
+                                    <div id="pr1" class="card-button-inner bag-button cart">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button">
+                                <a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,129 +243,9 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="13">Chirag</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="14">Aakash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="15">Amithesh</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para">
-                            <span class="dress-card-price">Rs.839 &ensp;</span>
-                            <span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)
                             </span>
-                        </p>
-                        <p class="dress-card-para">Sold By : <a href="12">Yash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <a href="#"> <span>Wishlist </span></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -270,14 +253,18 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="13">Chirag</a></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/13">Chirag</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <div class="col-md-6 card-button divpr" id="divpr2">
+                                <a href="javascript:void(0)">
+                                    <div id="pr2" class="card-button-inner bag-button cart">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button">
+                                <a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,101 +277,9 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="14">Aakash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="15">Amithesh</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para">
-                            <span class="dress-card-price">Rs.839 &ensp;</span>
-                            <span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)
                             </span>
-                        </p>
-                        <p class="dress-card-para">Sold By : <a href="12">Yash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <a href="#"> <span>Wishlist </span></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -392,44 +287,18 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="13">Chirag</a></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/14">Aakash</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="14">Aakash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                            <div class="col-md-6 card-button divpr" id="divpr3">
+                                <a href="javascript:void(0)">
+                                    <div id="pr3" class="card-button-inner bag-button cart">Add to Bag</div>
                                 </a>
                             </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <div class="col-md-6 card-button">
+                                <a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -442,71 +311,9 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="15">Amithesh</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para">
-                            <span class="dress-card-price">Rs.839 &ensp;</span>
-                            <span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)
                             </span>
-                        </p>
-                        <p class="dress-card-para">Sold By : <a href="12">Yash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <a href="#"> <span>Wishlist </span></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -514,74 +321,18 @@
                         <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
                                 class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                 OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="13">Chirag</a></p>
+                        <p class="dress-card-para">Sold By : <a href="storeinfo/15">Amithesh</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="14">Aakash</a></p>
-                        <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                            <div class="col-md-6 card-button divpr" id="divpr4">
+                                <a href="javascript:void(0)">
+                                    <div id="pr4" class="card-button-inner bag-button cart">Add to Bag</div>
                                 </a>
                             </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dress-card">
-                    <div class="dress-card-head">
-                        <img class="dress-card-img-top"
-                            src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
-                            alt="">
-                        <div class="surprise-bubble"><span class="dress-card-heart">
-                                <i class="fa fa-heart"></i>
-                            </span><a href="prodview/"> <span>More</span></a></div>
-                    </div>
-                    <div class="dress-card-body">
-                        <h4 class="dress-card-title">Harpa</h4>
-                        <p class="dress-card-para">Womans printed clothing</p>
-                        <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
-                                OFF)</span></p>
-                        <p class="dress-card-para">Sold By : <a href="15">Amithesh</a></p>
-                        <div class="row">
                             <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
+                                <a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
                                 </a>
                             </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
                         </div>
                     </div>
                 </div>
@@ -603,11 +354,21 @@
             </li>
         </ul>
     </nav><br>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="/static/user/index.js"></script>
+
 </body>
 
 </html>

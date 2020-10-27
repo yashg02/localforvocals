@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Store</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,9 +19,9 @@
 <body>
     {% load static %}
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f4511e;padding: 0rem 1rem;">
-        <a class="navbar-brand" href="/static/user/img/logo1.png"><img src="/static/user/img/logo1.png"
-                style="width:265px;height:44px"></a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0;">
+        <a class="navbar-brand" style="padding:0;" href="/static/user/img/logo1.png"><img
+                src="/static/user/img/logo1.png" style="width:265px;height:44px"></a>
         <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent "
             aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
             <span class="navbar-toggler-icon "></span>
@@ -31,13 +30,13 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent ">
             <ul class="navbar-nav mr-auto ">
                 <li class="nav-item">
-                    <a class="nav-link" style="color:white;" href="/">HOME</a>
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/">HOME</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#about ">ABOUT</a>
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#about ">ABOUT</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="/#contact ">CONTACT</a>
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#contact ">CONTACT</a>
                 </li>
             </ul>
             <div class="input-group col-md-3">
@@ -56,20 +55,19 @@
             </div>
             <ul class="navbar-nav mr-right ">
                 <li class="nav-item">
-                    <a class="nav-link" style="color:white;" href="/Login/">
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/Login/">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         SignIN
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " style="color:white;" href="#">
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/cart">
                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                        Cart (0)
+                        Cart (<span id="cart">0</span>)
                     </a>
                 </li>
             </ul>
         </div>
-
     </nav>
 
     <!-- <section class="text-gray-700 body-font ">
@@ -144,8 +142,7 @@
         </ul>
     </nav><br> {% endif %} -->
 
-
-    <div class="container" style="padding: 70px;">
+    <div class="container-fluid" style="padding: 70px 150px;">
         <div class="row">
             <div class="col-md-3">
                 <div class="dress-card">
@@ -155,7 +152,7 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="storeinfo/prodview/"> <span>More</span></a></div>
+                            </span><a href=""> <span>Wishlist </span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -168,11 +165,13 @@
                         </p>
                         <p class="dress-card-para">Sold By : <a href="storeinfo/12">Yash</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
+                            <div class="col-md-6 card-button divpr" id="divpr1">
+                                <a href="javascript:void(0)">
+                                    <div id="pr1" class="card-button-inner bag-button cart">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
                                 </a></div>
                         </div>
                     </div>
@@ -186,7 +185,7 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="#"> <span>More</span></a></div>
+                            </span><a href="#"> <span>Wishlist </span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -196,11 +195,13 @@
                                 OFF)</span></p>
                         <p class="dress-card-para">Sold By : <a href="storeinfo/13">Chirag</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
-                                </a></div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
+                            <div class="col-md-6 card-button divpr" id="divpr2">
+                                <a href="javascript:void(0)">
+                                    <div id="pr2" class="card-button-inner bag-button cart">Add to Bag</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
                                 </a></div>
                         </div>
                     </div>
@@ -214,7 +215,7 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="#"> <span>More</span></a></div>
+                            </span><a href="#"> <span>Wishlist </span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -224,13 +225,13 @@
                                 OFF)</span></p>
                         <p class="dress-card-para">Sold By : <a href="storeinfo/14">Aakash</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div class="card-button-inner bag-button">Add to Bag</div>
+                            <div class="col-md-6 card-button divpr" id="divpr3">
+                                <a href="javascript:void(0)">
+                                    <div id="pr3" class="card-button-inner bag-button cart">Add to Bag</div>
                                 </a>
                             </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
+                            <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
                                 </a></div>
                         </div>
                     </div>
@@ -244,7 +245,7 @@
                             alt="">
                         <div class="surprise-bubble"><span class="dress-card-heart">
                                 <i class="fa fa-heart"></i>
-                            </span><a href="#"> <span>More</span></a></div>
+                            </span><a href="#"> <span>Wishlist </span></a></div>
                     </div>
                     <div class="dress-card-body">
                         <h4 class="dress-card-title">Harpa</h4>
@@ -254,14 +255,16 @@
                                 OFF)</span></p>
                         <p class="dress-card-para">Sold By : <a href="storeinfo/15">Amithesh</a></p>
                         <div class="row">
-                            <div class="col-md-6 card-button">
-                                <a href="">
-                                    <div id="cart" class="card-button-inner bag-button">Add to Bag</div>
+                            <div class="col-md-6 card-button divpr" id="divpr4">
+                                <a href="javascript:void(0)">
+                                    <div id="pr4" class="card-button-inner bag-button cart">Add to Bag</div>
                                 </a>
                             </div>
-                            <div class="col-md-6 card-button"><a href="">
-                                    <div class="card-button-inner wish-button">Whishlist</div>
-                                </a></div>
+                            <div class="col-md-6 card-button">
+                                <a href="storeinfo/prodview/">
+                                    <div class="card-button-inner wish-button">Details</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -284,16 +287,19 @@
 
         </ul>
     </nav><br>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous ">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js "
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous ">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous ">
-    </script>
+        </script>
+    
+    <script src="/static/user/index.js"></script>
+
 </body>
 
 </html>

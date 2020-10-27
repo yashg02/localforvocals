@@ -9,25 +9,41 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/user/index.css" type="text/css">
+    <style>
+        .dress-card-price {
+            font-size: 1.6rem;
+        }
+
+        .dress-card-para {
+            font-size: 1.6rem;
+        }
+
+        .surprise-bubble {
+            bottom: 19rem;
+            right: 3rem;
+        }
+    </style>
 </head>
 
 <body id="myPage" data-spy="scroll">
     {% load static %}
 
-    <!-- Navbar -->
-
     <div id="loader"><img src="static/user/img/load2.gif" /></div>
     <div id="content">
+
+        <!-- Navbar -->
+
         <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid" style="margin-bottom: 10px">
+            <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-left">
-                        <a href="static/user/img/logo1.png"><img src="static/user/img/logo1.png" style="width:265px;height:44px"></a>
+                        <a href="static/user/img/logo1.png"><img src="static/user/img/logo1.png"
+                                style="width:265px;height:44px"></a>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li style="margin-left: 20px;"><a href="#home">HOME</a></li>
@@ -70,47 +86,45 @@
                         {% else %}
                         <li><a href="Login/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
                         {% endif %}
-                        <li><a href="/cart/"><span class="glyphicon glyphicon-shopping-cart"></span> Cart(0)</a></li>
+                        <li><a href="/cart/"><span class="glyphicon glyphicon-shopping-cart"></span> Cart(<span
+                                    id="cart">0</span>)</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Welcome Message and Translator -->
+        <!-- Welcome Message -->
 
-        <div class="row">
-            <div class="col-md-11">
-                <div class="alert alert-danger alert-dismissible text-center"
-                    style="margin-top: 3.3em;color: white; background-color: #f4511e; border-color: #f4511e;">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <span id="typed"></span>
-                </div>
-            </div>
+        <div class="alert alert-danger alert-dismissible text-center welcome">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span id="typed"></span>
+        </div>
 
-            <div class="sticky">
-                <div id="google_translate_element" class="form-box"></div>
-            </div>
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({
-                        pageLanguage: 'en',
-                        includedLanguages: 'en,hi,pa,gu,kn,mr,or,ta,sd,te,ur',
-                    }, 'google_translate_element');
-                }
-            </script>
+        <!-- Translator -->
 
-            <script type="text/javascript"
-                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <div class="sticky">
+            <div id="google_translate_element" class="form-box"></div>
+        </div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,pa,gu,kn,mr,or,ta,sd,te,ur',
+                }, 'google_translate_element');
+            }
+        </script>
 
-            <div class="skiptranslate">
-                <iframe frameborder="0" style="visibility:visible" src="javascript:''"
-                    class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
-            </div>
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <div class="skiptranslate">
+            <iframe frameborder="0" style="visibility:visible" src="javascript:''"
+                class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
         </div>
 
         <!-- Carousel -->
 
-        <div class="container-fluid" id='home' style="padding: 70px 50px;">
+        <div class="container-fluid" id='home' style="padding: 70px 50px 0px;">
             <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators" style="z-index: 1;">
@@ -148,39 +162,141 @@
 
         <!-- Today's Deals -->
         <div id="deals"></div>
-        <h2 class="band-name band-name-large" style="padding: 45px 50px; font-size:7 rem;"><br>Today's Deal -
+        <h2 class="band-name band-name-large heading">Today's Deal -
             Recommended for you</h2>
 
-        <div class="container-fluid" id="home" style="padding: 45px 50px;">
-            <div id="myCarousel1" class="carousel slide carousel-fade" data-ride="carousel">
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-md-4">
-
+        <div class="container-fluid" style="padding: 20px 150px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dress-card">
+                        <div class="dress-card-head">
+                            <img class="dress-card-img-top"
+                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
+                                alt="">
+                            <div class="surprise-bubble"><span class="dress-card-heart">
+                                    <i class="fa fa-heart"></i>
+                                </span><a href=""> <span>Wishlist </span></a></div>
+                        </div>
+                        <div class="dress-card-body">
+                            <h4 class="dress-card-title">Harpa</h4>
+                            <p class="dress-card-para">Womans printed clothing</p>
+                            <p class="dress-card-para">
+                                <span class="dress-card-price">Rs.839 &ensp;</span>
+                                <span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                    OFF)
+                                </span>
+                            </p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/12">Yash</a></p>
+                            <div class="row">
+                                <div class="col-md-6 card-button divpr" id="divpr1">
+                                    <a href="javascript:void(0)">
+                                        <div id="pr1" class="card-button-inner bag-button cart">Add to Bag</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                        <div class="card-button-inner wish-button">Details</div>
+                                    </a></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel1" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="col-md-3">
+                    <div class="dress-card">
+                        <div class="dress-card-head">
+                            <img class="dress-card-img-top"
+                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
+                                alt="">
+                            <div class="surprise-bubble"><span class="dress-card-heart">
+                                    <i class="fa fa-heart"></i>
+                                </span><a href="#"> <span>Wishlist </span></a></div>
+                        </div>
+                        <div class="dress-card-body">
+                            <h4 class="dress-card-title">Harpa</h4>
+                            <p class="dress-card-para">Womans printed clothing</p>
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                    OFF)</span></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/13">Chirag</a></p>
+                            <div class="row">
+                                <div class="col-md-6 card-button divpr" id="divpr2">
+                                    <a href="javascript:void(0)">
+                                        <div id="pr2" class="card-button-inner bag-button cart">Add to Bag</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                        <div class="card-button-inner wish-button">Details</div>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dress-card">
+                        <div class="dress-card-head">
+                            <img class="dress-card-img-top"
+                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
+                                alt="">
+                            <div class="surprise-bubble"><span class="dress-card-heart">
+                                    <i class="fa fa-heart"></i>
+                                </span><a href="#"> <span>Wishlist </span></a></div>
+                        </div>
+                        <div class="dress-card-body">
+                            <h4 class="dress-card-title">Harpa</h4>
+                            <p class="dress-card-para">Womans printed clothing</p>
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                    OFF)</span></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/14">Aakash</a></p>
+                            <div class="row">
+                                <div class="col-md-6 card-button divpr" id="divpr3">
+                                    <a href="javascript:void(0)">
+                                        <div id="pr3" class="card-button-inner bag-button cart">Add to Bag</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                        <div class="card-button-inner wish-button">Details</div>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dress-card">
+                        <div class="dress-card-head">
+                            <img class="dress-card-img-top"
+                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
+                                alt="">
+                            <div class="surprise-bubble"><span class="dress-card-heart">
+                                    <i class="fa fa-heart"></i>
+                                </span><a href="#"> <span>Wishlist </span></a></div>
+                        </div>
+                        <div class="dress-card-body">
+                            <h4 class="dress-card-title">Harpa</h4>
+                            <p class="dress-card-para">Womans printed clothing</p>
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                                    OFF)</span></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/15">Amithesh</a></p>
+                            <div class="row">
+                                <div class="col-md-6 card-button divpr" id="divpr4">
+                                    <a href="javascript:void(0)">
+                                        <div id="pr4" class="card-button-inner bag-button cart">Add to Bag</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 card-button">
+                                    <a href="storeinfo/prodview/">
+                                        <div class="card-button-inner wish-button">Details</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <div id="product"></div>
-        <!--<h1 style="color:#f4511e;font-size: 60px; letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Shop By Category</i></h1> -->
-        <h1 class="band-name band-name-large text-dark"><br>Shop By Category</h1>
+        <h1 class="band-name band-name-large text-dark heading">Shop By Category</h1>
 
         <div class="banner-section spad">
             <div class="container-fluid">
@@ -231,10 +347,7 @@
         </div>
 
         <div id="store"></div>
-        <!-- <h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Popular Store</i></h1><br> -->
-        <h1 class="band-name band-name-large text-dark"><br>Popular Store<br></h1>
-        <!-- <img src="static/user/img/store.png" id="store" style="padding-top: 30px;" class="mx-auto d-block"> -->
+        <h1 class="band-name band-name-large text-dark heading">Popular Store</h1>
 
         <section class="text-gray-700 body-font">
             <div class="container-fluid px-5 py-24 mx-auto">
@@ -550,9 +663,7 @@
         </section>
 
         <div id="about"></div>
-        <!--<h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>About</i></h1><br> -->
-        <h1 class="band-name band-name-large text-dark"><br>About<br></h1>
+        <h1 class="band-name band-name-large text-dark heading" style="padding-bottom: 20px;">About</h1>
 
         <section class="client_review">
             <div class="container">
@@ -612,23 +723,14 @@
 
 
         <div id="contact"></div>
-        <!-- <h1 style="color:#f4511e;font-size: 60px;  letter-spacing:10px; text-decoration: underline;" class="text-center">
-        <br><i>Contact</i></h1><br> -->
-        <h1 class="band-name band-name-large text-dark"><br>Contact</h1><br>
+        <h1 class="band-name band-name-large text-dark heading" style="padding-bottom: 20px;">Contact</h1>
 
         <section class="contact-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>GET IN TOUCH</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col-md-6 wow fadeInLeft animated">
                         <div class="left-content">
-                            <h2><span>local FOR vocals</span></h2>
+                            <!-- <h2 class="band-name band-name-large text-dark text-left">local FOR vocals</h2> -->
                             <h3>We'd love To Meet You In Person Or Via The Web!</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class
                                 aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut
@@ -707,56 +809,58 @@
             </a>
         </footer>
     </div>
-    
-            <script>
-                $(document).ready(function () {
-                    // Add smooth scrolling to all links in navbar + footer link
-                    $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-                        // Make sure this.hash has a value before overriding default behavior
-                        if (this.hash !== "") {
-                            // Prevent default anchor click behavior
-                            event.preventDefault();
 
-                            // Store hash
-                            var hash = this.hash;
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                            // Using jQuery's animate() method to add smooth page scroll
-                            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                            $('html, body').animate({
-                                scrollTop: $(hash).offset().top
-                            }, 900, function () {
+                    // Store hash
+                    var hash = this.hash;
 
-                                // Add hash (#) to URL when done scrolling (default click behavior)
-                                window.location.hash = hash;
-                            });
-                        } // End if
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
                     });
+                } // End if
+            });
 
-                    $(window).scroll(function () {
-                        $(".slideanim").each(function () {
-                            var pos = $(this).offset().top;
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
 
-                            var winTop = $(window).scrollTop();
-                            if (pos < winTop + 600) {
-                                $(this).addClass("slide");
-                            }
-                        });
-                    });
-                })
-                window.onload = function () {
-                    document.getElementById('loader').style.display = "none";
-                    document.getElementById('content').style.display = "block";
-                };
-                var typed = new Typed('#typed', {
-                    strings: ["Welcome to our website !", "A platform for local dealers..."],
-                    backSpeed: 50,
-                    smartBackspace: true,
-                    backDelay: 1200,
-                    startDelay: 1000,
-                    typeSpeed: 150,
-                    loop: true,
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
                 });
-            </script>
+            });
+        })
+        window.onload = function () {
+            document.getElementById('loader').style.display = "none";
+            document.getElementById('content').style.display = "block";
+        };
+        var typed = new Typed('#typed', {
+            strings: ["Welcome to our website !", "A platform for local dealers..."],
+            backSpeed: 50,
+            smartBackspace: true,
+            backDelay: 1200,
+            startDelay: 1000,
+            typeSpeed: 150,
+            loop: true,
+        });
+    </script>
+
+    <script src="/static/user/index.js"></script>
 
 </body>
 

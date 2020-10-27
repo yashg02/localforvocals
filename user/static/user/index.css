@@ -1,10 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
-@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    top: 0px !important;
+}
 
+
+/* Loader And heading */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 @font-face {
     font-family: "Booter - Zero Zero";
-    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
-         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"), url("Fonts/Booter - Zero Zero.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
@@ -15,47 +22,54 @@
     font-size: 7rem !important;
     font-family: "Booter - Zero Zero";
     font-weight: normal;
-    color:#f4511e !important;
+    color: #f4511e !important;
 }
 
 .band-name-large {
     font-size: 7rem !important;
 }
 
-#content{display:none;}
-
-#loader{
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 200px;
-	height: 200px;
+#content {
+    display: none;
 }
 
-#loader img{width:200px;}
-
-
-body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    top: 0px !important;
+#loader {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
 }
+
+#loader img {
+    width: 200px;
+}
+
+.heading {
+    padding-top: 70px;
+}
+
 
 /* Navbar */
 
 .navbar {
     margin-bottom: 0;
     background-color: #f4511e;
-    z-index: 5;
+    z-index: 9999;
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
     letter-spacing: 4px;
     border-radius: 0;
     font-family: Montserrat, sans-serif;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #fff !important;
 }
 
 .navbar-nav li a:hover,
@@ -69,9 +83,6 @@ body {
     color: #fff !important;
 }
 
-.navbar-default .navbar-nav>li>a {
-    color: white;
-}
 
 /* Navbar Category Dropdown */
 
@@ -109,7 +120,17 @@ body {
     background-color: white;
 }
 
-/* Translator */
+
+/*Welcome Message and Translator */
+
+.welcome {
+    margin-top: 3.3em;
+    color: white;
+    background-color: #f4511e;
+    border-color: #f4511e;
+    float: left;
+    width: 91%;
+}
 
 div.sticky {
     position: fixed;
@@ -121,6 +142,7 @@ div.sticky {
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 }
+
 
 /* Carousel */
 
@@ -150,9 +172,9 @@ div.sticky {
     font-style: normal;
 }
 
-/* Deals */
 
-/* card */
+/* Product Card */
+
 .dress-card-img-top {
     width: 100%;
     border-radius: 7px 7px 0 0;
@@ -183,8 +205,7 @@ div.sticky {
 
 .dress-card-para {
     margin-bottom: 0.2rem;
-    font-size: 1.0rem;
-    margin-bottom: 0rem;
+    font-size: 1rem;
 }
 
 .dress-card {
@@ -198,7 +219,6 @@ div.sticky {
     position: absolute;
     left: 4px;
     top: 0px;
-
 }
 
 .surprise-bubble {
@@ -227,7 +247,6 @@ div.sticky {
     left: 20px;
     opacity: 0;
     -webkit-transition-delay: 2s;
-    /* Safari */
     transition-delay: 2s;
     -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -236,7 +255,7 @@ div.sticky {
 .surprise-bubble:hover {
     border-radius: 999rem;
     padding: 1rem;
-    width: 26%;
+    width: 30%;
     height: 30px;
     background: #f4511e;
     color: white;
@@ -247,7 +266,6 @@ div.sticky {
 .surprise-bubble:hover a {
     opacity: 1;
     -webkit-transition-delay: 2s;
-    /* Safari */
     transition-delay: 2s;
     -webkit-transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -274,19 +292,16 @@ div.sticky {
     color: white;
 }
 
-.bag-button :hover {
-    background: #e299b9;
-}
-
 .wish-button {
     border: 1px solid #f4511e;
     color: #f4511e;
 }
 
+
 /* Shop by category */
 
 section .container-fluid {
-    padding: 40px 50px;
+    padding: 20px 50px 0px;
 }
 
 .banner-section img {
@@ -297,7 +312,7 @@ section .container-fluid {
 }
 
 .banner-section {
-    padding: 27px 50px;
+    padding: 20px 50px 0px;
 }
 
 .single-banner {
@@ -441,7 +456,7 @@ section .container-fluid {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(45, 50, 55, .55)
+    background: rgba(45, 50, 55, 0.55);
 }
 
 .contact-section .titie-section {
@@ -471,7 +486,7 @@ section .container-fluid {
     display: block;
     font-size: 20px;
     font-weight: 400;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     margin: 0;
     padding: 0;
     margin-top: 15px;
@@ -483,7 +498,7 @@ section .container-fluid {
     font-size: 14px;
     font-weight: 300;
     line-height: 24px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
 }
 
 .contact-section .left-content p b {
@@ -580,12 +595,17 @@ section .container-fluid {
     text-transform: uppercase;
 }
 
+
 /* Footer */
 
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
     color: #f4511e;
+}
+
+.fa {
+    font-size: 15px;
 }
 
 .slideanim {
@@ -605,7 +625,6 @@ footer .glyphicon {
         opacity: 0;
         transform: translateY(70%);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0%);
@@ -617,7 +636,6 @@ footer .glyphicon {
         opacity: 0;
         -webkit-transform: translateY(70%);
     }
-
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
@@ -629,7 +647,6 @@ footer .glyphicon {
         text-align: center;
         margin: 25px 0;
     }
-
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;
@@ -641,4 +658,3 @@ footer .glyphicon {
         font-size: 150px;
     }
 }
-
