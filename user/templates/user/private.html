@@ -2,7 +2,7 @@
 
 <head>
     <title>
-        Registration Form
+        Registration
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/user/img/favicon1.ico">
     <script type="text/javascript">
         function checkForm(form) {
             if (form.password.value == form.cpassword.value) {
@@ -24,7 +25,7 @@
     </script>
 </head>
 
-<body style="background-image: url('/static/user/img/bg3.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+<body style="background-color: #f4511e;background-repeat: no-repeat;background-size: 100% 100%;">
 
     <h3><span id="typed"></span></h3>
     <div class="container">
@@ -61,20 +62,9 @@
                             <input name="cpassword" type="password" id="cpassword" class="form-control" placeholder="Confirm Password" required>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <label>Contact Details:</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact" type="tel" class="form-control" maxlength="11" placeholder="XXXXX XXXXX" pattern="[0-9]{5}[ ][0-9]{5}" size="5" required>
-                        </div>
-                    </div> -->
                     <h6 class="text-center">OR
-                        <a href="/Login">
-                            <h5 style="display: inline;"><br><br>Already Have a Account</h5>
-                        </a>
-                        <b style="font-size: 15;">&nbsp; | &nbsp; </b>
-                        <a href="business/">
-                            <h5 style="display: inline;">Create A Business Account</h5>
+                        <a href="/plogin">
+                            <h5>Already Have a Account</h5>
                         </a>
                     </h6>
                     {% csrf_token %}

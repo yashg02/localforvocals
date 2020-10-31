@@ -14,10 +14,11 @@ function updateCart(cart) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
 }
 
 // If the add to cart button is clicked, add/increment the item
-$('.cart').click(function () {
+$('.cart').click(function() {
     var idstr = this.id.toString();
     if (cart[idstr] != undefined) {
         cart[idstr] = cart[idstr] + 1;

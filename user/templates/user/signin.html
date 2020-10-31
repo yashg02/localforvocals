@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/user/img/favicon1.ico">
+    <title>SignIN</title>
+    <style>
+        ul {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
+        
+        ul .image-wrap {
+            z-index: 1;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: .5em;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            width: auto;
+            line-height: 0;
+        }
+        
+        ul .image-wrap {
+            border: 4px solid white;
+            -moz-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        
+        ul .image-wrap img {
+            max-width: 100%;
+            height: auto;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+        
+        ul {
+            width: 600px;
+            /* margin: 0 auto;
+            padding: 5%;
+            background-color: #e9e9e9; */
+            overflow: hidden;
+            *zoom: 1;
+        }
+        
+        ul .image-wrap {
+            background: grey;
+        }
+        
+        ul .image-wrap img {
+            opacity: 1;
+            -moz-transition-property: opacity;
+            -o-transition-property: opacity;
+            -webkit-transition-property: opacity;
+            transition-property: opacity;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        
+        ul li {
+            list-style: none;
+            float: left;
+            width: 40%;
+            margin-right: 4%;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            /* cursor: pointer; */
+        }
+        
+        ul li:nth-child(4) {
+            margin-right: 0;
+        }
+        
+        ul li:hover .school {
+            left: 0;
+            margin-left: 0;
+        }
+        
+        ul li:hover .state {
+            left: 0;
+            margin-right: 0;
+        }
+        
+        ul li:hover img {
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=40);
+            opacity: 0.4;
+        }
+        
+        .info {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 40%;
+        }
+        
+        .school {
+            font-weight: bold;
+            display: block;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -moz-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+            margin-left: -200%;
+        }
+        
+        li:nth-child(2) .school {
+            margin-left: 0;
+            margin-top: -100%;
+        }
+        
+        li:nth-child(2):hover .school {
+            margin-top: 0;
+        }
+        
+        li:nth-child(3) .school {
+            margin-left: 0;
+            margin-top: 200%;
+        }
+        
+        li:nth-child(3):hover .school {
+            margin-top: 0;
+        }
+        
+        li:nth-child(4) .school {
+            margin-left: 0;
+            margin-top: -200%;
+        }
+        
+        li:nth-child(4):hover .school {
+            margin-top: 0;
+        }
+        
+        .state {
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=80);
+            opacity: 0.8;
+            display: block;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -moz-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+            margin-right: -200%;
+        }
+        
+        li:nth-child(2) .state {
+            margin-right: 0;
+            margin-top: 199%;
+        }
+        
+        li:nth-child(2):hover .state {
+            margin-top: 0;
+        }
+        
+        li:nth-child(3) .state {
+            margin-right: 0;
+            margin-top: 100%;
+        }
+        
+        li:nth-child(3):hover .state {
+            margin-top: 0;
+        }
+        
+        li:nth-child(4) .state {
+            margin-right: 0;
+            margin-top: -100%;
+        }
+        
+        li:nth-child(4):hover .state {
+            margin-top: 0;
+        }
+        
+        .a1 {
+            position: absolute;
+            top: 75%;
+            left: 67px;
+            width: 42%;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            background-color: black;
+            font-weight: light;
+            font-size: 1.25rem;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -moz-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+        }
+        
+        .a2 {
+            color: white;
+            text-decoration: none;
+        }
+        
+        li:hover a {
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+            opacity: 1;
+        }
+        
+        li:hover .a1 {
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f4511e;background-repeat: no-repeat;background-size: 100% 100%;">
+    <ul>
+        <li>
+            <div class="image-wrap"><img src="/static/user/img/private.webp" /></div>
+            <div class="info">
+                <span class="school">ACCOUNT</span>
+                <span class="state"><a href="/plogin" class="a2">Login</a> | <a href="/signup" class="a2">SignUP</a></span>
+            </div>
+            <span class="a1">PRIVATE</span>
+        </li>
+        <li>
+            <div class="image-wrap"><img src="/static/user/img/business.webp" /></div>
+            <div class="info">
+                <span class="school">ACCOUNT</span>
+                <span class="state"><a href="/blogin" class="a2">Login</a> | <a href="/business" class="a2">SignUP</a></span>
+            </div>
+            <span class="a1">BUSINESS</span>
+        </li>
+    </ul>
+</body>
+
+</html>

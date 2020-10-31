@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/static/user/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/user/img/favicon1.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
@@ -37,7 +38,7 @@
     </script>
 </head>
 
-<body style="background-image: url('/static/user/img/bg3.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+<body style="background-color: #f4511e;background-repeat: no-repeat;background-size: 100% 100%;">
 
     <div class="container">
         <div class="row" style="margin-top: 2%;">
@@ -98,24 +99,25 @@
     </div>
     <script>
         $(document).ready(function() {
-            var max_fields      = 5; //maximum input boxes allowed
-            var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
-            var add_button      = $(".add_field_button"); //Add button ID
+            var max_fields = 5; //maximum input boxes allowed
+            var wrapper = $(".input_fields_wrap"); //Fields wrapper
+            var add_button = $(".add_field_button"); //Add button ID
 
             var x = 1; //initlal text box count
-            $(add_button).click(function(e){ //on add input button click
+            $(add_button).click(function(e) { //on add input button click
                 e.preventDefault();
-                if(x < max_fields){ //max input box allowed
+                if (x < max_fields) { //max input box allowed
                     x++; //text box increment
                     $(wrapper).append('<div style="margin-top:2px;"><input type="color" id="color[]" name="color[]" value="#f4511e"><a href="#" class="remove_field" style="text-decoration:none;"> Delete</a></div>'); //add input box
                 }
             });
 
-            $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-                e.preventDefault(); $(this).parent('div').remove(); x--;
+            $(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
             })
         });
-
     </script>
 </body>
 

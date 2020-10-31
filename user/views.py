@@ -30,16 +30,22 @@ def store(request, cat):
     params = {'product': product[::-1], 'n': n}
     return render(request, 'user/store.html', params)
 
-def storeinfo(request, myid):
+def storeinfo(request, myname):
     prod = channel.objects.all()
-    product=channel.objects.filter(id=myid)
+    product=channel.objects.filter(name=myname)
     return render(request, 'user/storeinfo.html', {'product':product[0], 'prod': prod})
 
-def Login(request):
-    return render(request, 'user/Login.html')
+def plogin(request):
+    return render(request, 'user/plogin.html')
+
+def blogin(request):
+    return render(request, 'user/blogin.html')
+
+def signin(request):
+    return render(request, 'user/signin.html')
 
 def signup(request):
-    return render(request, 'user/registration.html')
+    return render(request, 'user/private.html')
 
 def business(request):
     return render(request, 'user/business.html')

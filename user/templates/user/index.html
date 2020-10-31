@@ -14,15 +14,16 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/user/index.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/user/img/favicon1.ico">
     <style>
         .dress-card-price {
             font-size: 1.6rem;
         }
-
+        
         .dress-card-para {
             font-size: 1.6rem;
         }
-
+        
         .surprise-bubble {
             bottom: 19rem;
             right: 3rem;
@@ -42,8 +43,7 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-left">
-                        <a href="static/user/img/logo1.png"><img src="static/user/img/logo1.png"
-                                style="width:265px;height:44px"></a>
+                        <a href="static/user/img/logo1.png"><img src="static/user/img/logo1.png" style="width:265px;height:44px"></a>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li style="margin-left: 20px;"><a href="#home">HOME</a></li>
@@ -62,11 +62,9 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <form method="GET" action="/search/" class="form-inline"
-                                style="margin-top: 8px;margin-right: 15px;margin-left:15px;">
+                            <form method="GET" action="/search/" class="form-inline" style="margin-top: 8px;margin-right: 15px;margin-left:15px;">
                                 <div class="input-group">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search . . . "
-                                        aria-label="Search" name="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search . . . " aria-label="Search" name="search">
                                     <div class="input-group-btn">
                                         <button class="btn btn-success" type="submit"><i
                                                 class="glyphicon glyphicon-search"></i></button>
@@ -84,7 +82,7 @@
                             </li>
                         </ul>
                         {% else %}
-                        <li><a href="Login/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
+                        <li><a href="signin/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
                         {% endif %}
                         <li><a href="/cart/"><span class="glyphicon glyphicon-shopping-cart"></span> Cart(<span
                                     id="cart">0</span>)</a></li>
@@ -103,7 +101,7 @@
         <!-- Translator -->
 
         <div class="sticky">
-            <div id="google_translate_element" class="form-box"></div>
+            <div id="google_translate_element" class="form-box1"></div>
         </div>
         <script type="text/javascript">
             function googleTranslateElementInit() {
@@ -114,12 +112,10 @@
             }
         </script>
 
-        <script type="text/javascript"
-            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
         <div class="skiptranslate">
-            <iframe frameborder="0" style="visibility:visible" src="javascript:''"
-                class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
+            <iframe frameborder="0" style="visibility:visible" src="javascript:''" class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
         </div>
 
         <!-- Carousel -->
@@ -162,20 +158,19 @@
 
         <!-- Today's Deals -->
         <div id="deals"></div>
-        <h2 class="band-name band-name-large heading">Today's Deal -
-            Recommended for you</h2>
+        <h2 class="band-name band-name-large heading">Today's Deal - Recommended for you</h2>
 
         <div class="container-fluid" style="padding: 20px 150px;">
             <div class="row">
                 <div class="col-md-3">
                     <div class="dress-card">
                         <div class="dress-card-head">
-                            <img class="dress-card-img-top"
-                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg"
-                                alt="">
+                            <img class="dress-card-img-top" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578935/2018/10/23/d7b740bc-e00e-4bec-97aa-65016f8ff2e71540289479612-Harpa-Women-Dresses-2331540289479465-1.jpg" alt="">
                             <div class="surprise-bubble"><span class="dress-card-heart">
                                     <i class="fa fa-heart"></i>
-                                </span><a href=""> <span>Wishlist </span></a></div>
+                                </span>
+                                <a href=""> <span>Wishlist </span></a>
+                            </div>
                         </div>
                         <div class="dress-card-body">
                             <h4 class="dress-card-title">Harpa</h4>
@@ -186,16 +181,18 @@
                                     OFF)
                                 </span>
                             </p>
-                            <p class="dress-card-para">Sold By : <a href="storeinfo/12">Yash</a></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/Yash">Yash</a></p>
                             <div class="row">
                                 <div class="col-md-6 card-button divpr" id="divpr1">
                                     <a href="javascript:void(0)">
                                         <div id="pr1" class="card-button-inner bag-button cart">Add to Bag</div>
                                     </a>
                                 </div>
-                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                <div class="col-md-6 card-button">
+                                    <a href="/prodview/">
                                         <div class="card-button-inner wish-button">Details</div>
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,29 +200,30 @@
                 <div class="col-md-3">
                     <div class="dress-card">
                         <div class="dress-card-head">
-                            <img class="dress-card-img-top"
-                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg"
-                                alt="">
+                            <img class="dress-card-img-top" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6625378/2018/6/5/fcec8d8e-4253-4fa4-ae6e-c6805b3b8fd31528183265021-na-2331528183264786-1.jpg" alt="">
                             <div class="surprise-bubble"><span class="dress-card-heart">
                                     <i class="fa fa-heart"></i>
-                                </span><a href="#"> <span>Wishlist </span></a></div>
+                                </span>
+                                <a href="#"> <span>Wishlist </span></a>
+                            </div>
                         </div>
                         <div class="dress-card-body">
                             <h4 class="dress-card-title">Harpa</h4>
                             <p class="dress-card-para">Womans printed clothing</p>
-                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                     OFF)</span></p>
-                            <p class="dress-card-para">Sold By : <a href="storeinfo/13">Chirag</a></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/Chirag">Chirag</a></p>
                             <div class="row">
                                 <div class="col-md-6 card-button divpr" id="divpr2">
                                     <a href="javascript:void(0)">
                                         <div id="pr2" class="card-button-inner bag-button cart">Add to Bag</div>
                                     </a>
                                 </div>
-                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                <div class="col-md-6 card-button">
+                                    <a href="/prodview/">
                                         <div class="card-button-inner wish-button">Details</div>
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -233,29 +231,30 @@
                 <div class="col-md-3">
                     <div class="dress-card">
                         <div class="dress-card-head">
-                            <img class="dress-card-img-top"
-                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg"
-                                alt="">
+                            <img class="dress-card-img-top" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578929/2018/10/23/86988cdc-cbe3-4b13-93f9-b37ad571b4761540274855321-Harpa-Women-Dresses-9171540274855158-1.jpg" alt="">
                             <div class="surprise-bubble"><span class="dress-card-heart">
                                     <i class="fa fa-heart"></i>
-                                </span><a href="#"> <span>Wishlist </span></a></div>
+                                </span>
+                                <a href="#"> <span>Wishlist </span></a>
+                            </div>
                         </div>
                         <div class="dress-card-body">
                             <h4 class="dress-card-title">Harpa</h4>
                             <p class="dress-card-para">Womans printed clothing</p>
-                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                     OFF)</span></p>
-                            <p class="dress-card-para">Sold By : <a href="storeinfo/14">Aakash</a></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/Aakash">Aakash</a></p>
                             <div class="row">
                                 <div class="col-md-6 card-button divpr" id="divpr3">
                                     <a href="javascript:void(0)">
                                         <div id="pr3" class="card-button-inner bag-button cart">Add to Bag</div>
                                     </a>
                                 </div>
-                                <div class="col-md-6 card-button"><a href="storeinfo/prodview/">
+                                <div class="col-md-6 card-button">
+                                    <a href="/prodview/">
                                         <div class="card-button-inner wish-button">Details</div>
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,20 +262,19 @@
                 <div class="col-md-3">
                     <div class="dress-card">
                         <div class="dress-card-head">
-                            <img class="dress-card-img-top"
-                                src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg"
-                                alt="">
+                            <img class="dress-card-img-top" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7578940/2018/10/23/fe701151-69e6-4e20-9e2a-ace63081a8e11540282217137-Harpa-Women-Dresses-191540282216937-5.jpg" alt="">
                             <div class="surprise-bubble"><span class="dress-card-heart">
                                     <i class="fa fa-heart"></i>
-                                </span><a href="#"> <span>Wishlist </span></a></div>
+                                </span>
+                                <a href="#"> <span>Wishlist </span></a>
+                            </div>
                         </div>
                         <div class="dress-card-body">
                             <h4 class="dress-card-title">Harpa</h4>
                             <p class="dress-card-para">Womans printed clothing</p>
-                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
-                                    class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+                            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
                                     OFF)</span></p>
-                            <p class="dress-card-para">Sold By : <a href="storeinfo/15">Amithesh</a></p>
+                            <p class="dress-card-para">Sold By : <a href="storeinfo/Amithesh">Amithesh</a></p>
                             <div class="row">
                                 <div class="col-md-6 card-button divpr" id="divpr4">
                                     <a href="javascript:void(0)">
@@ -284,7 +282,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-6 card-button">
-                                    <a href="storeinfo/prodview/">
+                                    <a href="/prodview/">
                                         <div class="card-button-inner wish-button">Details</div>
                                     </a>
                                 </div>
@@ -354,14 +352,12 @@
                 <div class="flex flex-wrap -m-4">
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/12.jpg"
-                                alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/12.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CROCKERY
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Casserole Shop</h1>
-                                <p class="leading-relaxed mb-3">For over 25 years The Casserole Shop has worked to
-                                    create quality comfort food that brings people around the table.</p>
+                                <p class="leading-relaxed mb-3">For over 25 years The Casserole Shop has worked to create quality comfort food that brings people around the table.</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -370,8 +366,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -393,15 +388,13 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/20.jpg"
-                                alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/20.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">FASHION
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Bangles & Ornaments Shop
                                 </h1>
-                                <p class="leading-relaxed mb-3">Fancy bangles & bracelets designs online shopping.
-                                    Bangles and bracelets are a ancient form of jewellery.</p>
+                                <p class="leading-relaxed mb-3">Fancy bangles & bracelets designs online shopping. Bangles and bracelets are a ancient form of jewellery.</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -410,8 +403,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -433,14 +425,12 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/21.jpg"
-                                alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/21.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CROCKERY
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Earthen Pots Shop</h1>
-                                <p class="leading-relaxed mb-3">The Earthen Shop clay curd pot can be used to prepare
-                                    thick delicious curd with a natural taste.</p>
+                                <p class="leading-relaxed mb-3">The Earthen Shop clay curd pot can be used to prepare thick delicious curd with a natural taste.</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -449,8 +439,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -471,14 +460,12 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src="static/user/img/1handicraft.jpg" alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/1handicraft.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CROCKERY
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Woodcraft Shop</h1>
-                                <p class="leading-relaxed mb-3">Woodworking is the activity or skill of making items
-                                    from wood, and includes cabinet making (cabinetry and furniture).</p>
+                                <p class="leading-relaxed mb-3">Woodworking is the activity or skill of making items from wood, and includes cabinet making (cabinetry and furniture).</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -487,8 +474,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -509,14 +495,12 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src="static/user/img/bags.jpg" alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/bags.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">FASHION
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Bags Shop</h1>
-                                <p class="leading-relaxed mb-3">From Cutting To Stitching And Designing To
-                                    Launching,Every Step Has His Own Perspectives Which Makes A Toingo.</p>
+                                <p class="leading-relaxed mb-3">From Cutting To Stitching And Designing To Launching,Every Step Has His Own Perspectives Which Makes A Toingo.</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -525,8 +509,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -547,13 +530,11 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/bat.jpg"
-                                alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/bat.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">TOYS</h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Cricket Kit Shop</h1>
-                                <p class="leading-relaxed mb-3">popular willow bat is quality is good. Junior Wood
-                                    Poplar Willow Cricket Bat- for Kids, 12-13 Years - for Tennis Ball, Size 5.</p>
+                                <p class="leading-relaxed mb-3">popular willow bat is quality is good. Junior Wood Poplar Willow Cricket Bat- for Kids, 12-13 Years - for Tennis Ball, Size 5.</p>
                                 <div class="flex items-center flex-wrap">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -562,8 +543,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -584,15 +564,13 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src="static/user/img/bedsheeet.jpg" alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/bedsheeet.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">HANDLOOM
                                 </h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clothes Shop</h1>
-                                <p class="leading-relaxed mb-3">Fine quality silk and the stitching is excellent.
-                                    Couldn't ask for more. Thanks for providing such great clothing at such a reasonable
-                                    price.</p>
+                                <p class="leading-relaxed mb-3">Fine quality silk and the stitching is excellent. Couldn't ask for more. Thanks for providing such great clothing at such a reasonable price.
+                                </p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -601,8 +579,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -623,13 +600,11 @@
                     </div>
                     <div class="p-4 md:w-1/4">
                         <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src="static/user/img/Wooden_toys_.jpg" alt="blog">
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="static/user/img/Wooden_toys_.jpg" alt="blog">
                             <div class="p-6">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">TOYS</h2>
                                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Wooden Toys Shop</h1>
-                                <p class="leading-relaxed mb-3">Wooden toys Push and Pull Wooden Toys Set of 6 Pieces
-                                    Police Car Train Engine Rabbit Cart Jocker Car Reassemble Engine.</p>
+                                <p class="leading-relaxed mb-3">Wooden toys Push and Pull Wooden Toys Set of 6 Pieces Police Car Train Engine Rabbit Cart Jocker Car Reassemble Engine.</p>
                                 <div class="flex items-center flex-wrap ">
                                     <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">View More
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
@@ -638,8 +613,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </a>
-                                    <span
-                                        class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+                                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                                         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -675,8 +649,7 @@
                             <div class="client_img">
                                 <img src="static/user/img/yash1.jpeg" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to
-                                help alleviate human suffering.</p>
+                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                             <h5>- Yash Gupta</h5>
                         </div>
 
@@ -684,8 +657,7 @@
                             <div class="client_img">
                                 <img src="static/user/img/chirag.jpeg" alt="#">
                             </div>
-                            <p>"Working1 in conjunction with humanitarian aid agencies, we have supported programmes to
-                                help alleviate human suffering.</p>
+                            <p>"Working1 in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                             <h5>- Chirag Bhagat</h5>
                         </div>
 
@@ -693,8 +665,7 @@
                             <div class="client_img">
                                 <img src="static/user/img/aakash.jpeg" alt="#">
                             </div>
-                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to
-                                help alleviate human suffering.</p>
+                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                             <h5>- Aakash Gupta</h5>
                         </div>
 
@@ -702,8 +673,7 @@
                             <div class="client_img">
                                 <img src="static/user/img/amithesh.jpeg" alt="#">
                             </div>
-                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to
-                                help alleviate human suffering.</p>
+                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                             <h5>- Amithesh Gupta</h5>
                         </div>
 
@@ -711,8 +681,7 @@
                             <div class="client_img">
                                 <img src="static/user/img/amithesh.jpeg" alt="#">
                             </div>
-                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to
-                                help alleviate human suffering.</p>
+                            <p>"Working2 in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                             <h5>- Ravikumar Gupta</h5>
                         </div>
                     </div>
@@ -732,10 +701,8 @@
                         <div class="left-content">
                             <!-- <h2 class="band-name band-name-large text-dark text-left">local FOR vocals</h2> -->
                             <h3>We'd love To Meet You In Person Or Via The Web!</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class
-                                aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut
-                                vestibulum necs et, vulputate quis urna. Donec at commodo
-                                erat.
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at
+                                commodo erat.
                             </p>
                             <div class="contact-info">
                                 <p><b>Main Office:</b> 123 Elm St. New York City, NY</p>
@@ -775,16 +742,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="contact" class="form-control" id="contact" maxlength="11"
-                                            placeholder="Contact" pattern="[0-9]{5}[ ][0-9]{5}" required>
+                                        <input type="contact" class="form-control" id="contact" maxlength="11" placeholder="Contact" pattern="[0-9]{5}[ ][0-9]{5}" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group">
-                                        <textarea name="" id="" class="form-control" cols="30" rows="5"
-                                            placeholder="Your Message..."></textarea>
+                                        <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Your Message..."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -803,7 +768,7 @@
 
         <!-- Slide UP -->
 
-        <footer class="container-fluid text-center">
+        <footer class="container-fluid text-center" style="padding-top: 50px;">
             <a href="#myPage" title="To Top">
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a>
@@ -811,9 +776,9 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
                 // Make sure this.hash has a value before overriding default behavior
                 if (this.hash !== "") {
                     // Prevent default anchor click behavior
@@ -826,7 +791,7 @@
                     // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top
-                    }, 900, function () {
+                    }, 900, function() {
 
                         // Add hash (#) to URL when done scrolling (default click behavior)
                         window.location.hash = hash;
@@ -834,8 +799,8 @@
                 } // End if
             });
 
-            $(window).scroll(function () {
-                $(".slideanim").each(function () {
+            $(window).scroll(function() {
+                $(".slideanim").each(function() {
                     var pos = $(this).offset().top;
 
                     var winTop = $(window).scrollTop();
@@ -845,7 +810,7 @@
                 });
             });
         })
-        window.onload = function () {
+        window.onload = function() {
             document.getElementById('loader').style.display = "none";
             document.getElementById('content').style.display = "block";
         };
