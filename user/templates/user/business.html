@@ -44,52 +44,52 @@
                     <div class="form-group">
                         <label>Choose a Category:</label>
                         <div class="radio">
-                            <label><input type="radio" name="category" id="category" required>Fashion</label>
+                            <label><input type="radio" value="Fashion" name="category" id="category" required>Fashion</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category" id="category">Handloom</label>
+                            <label><input type="radio" value="Handloom" name="category" id="category">Handloom</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category" id="category">Crockery</label>
+                            <label><input type="radio" value="Crockery" name="category" id="category">Crockery</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="category" id="category">Toys</label>
+                            <label><input type="radio" value="Toys" name="category" id="category">Toys</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Add Display Image:</label>
                         <input type="file" class="form-control-file" id="image" name="image">
                     </div>
-                    <div class="form-group" id="desc" name="desc">
+                    <div class="form-group">
                         <label>Description:</label>
-                        <textarea class="form-control" rows="2" placeholder="Write Here..." name="ingredients" required></textarea>
+                        <textarea class="form-control" rows="2" placeholder="Write Here..." id="desc" name="desc" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Email:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input name="email" type="email" class="form-control" placeholder="Enter Email" required>
+                            <input name="shopemail" type="email" id="shopemail" class="form-control" placeholder="Enter Email" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Passsword:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input name="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input name="shop_pass" id="shop_pass" type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Confirm Password:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input name="cpassword" type="password" class="form-control" placeholder="Confirm Password" required>
+                            <input name="shop_pass1" id="shop_pass1" type="password" class="form-control" placeholder="Confirm Password" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Contact Details:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact" type="tel" class="form-control" maxlength="11" placeholder="XXXXX XXXXX" pattern="[0-9]{5}[ ][0-9]{5}" size="5" required>
+                            <input name="contact" type="tel" id="contact" class="form-control" maxlength="11" placeholder="XXXXX XXXXX" pattern="[0-9]{5}[ ][0-9]{5}" size="5" required>
                         </div>
                     </div>
                     <h6 class="text-center">OR

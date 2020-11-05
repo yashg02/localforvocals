@@ -90,7 +90,7 @@ def handleSignup(request):
         myuser = User.objects.create_user(username, email, password)
         myuser.name = username
         myuser.email = email
-        myuser.password = password
+        myuser.set_password = password
         myuser.save()
         messages.success(request, 'Your Account has been created')
         return redirect('home')
@@ -129,8 +129,10 @@ def addprod(request):
         category = request.POST.get('category', '')
         desc = request.POST.get('desc', '')
         image = request.POST.get('image', '')
-        Channel = channel(name=name, category=category, desc=desc, image=image)
+        password = request.POST.get('shop_pass', '')
+        Channel = channel(name=name, category=category, desc=desc, image=image, password=password)
         Channel.save()
+        messages.success(request, "Your Store has been created")
         return redirect('home')
 
     return HttpResponse('404 - NOT FOUND')

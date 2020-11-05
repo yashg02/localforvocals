@@ -75,7 +75,7 @@
                         {% if user.is_authenticated %}
                         <ul class="navbar-nav ml-auto" style="margin-top: 15px">
                             <li class="nav-item">
-                                <a class="nav-link" style="color:white;" href="/logout">
+                                <a class="nav-link" style="color:white;" onclick="clicked()">
                                     <!-- <i class="fa fa-sign-in" aria-hidden="true"></i> -->
                                     {{request.user}}
                                 </a>
@@ -823,6 +823,15 @@
             typeSpeed: 150,
             loop: true,
         });
+
+        function clicked() {
+            if (confirm('Are you sure you want to Logout?')) {
+                location.href="/logout";
+            } else {
+                return false;
+            }
+        }
+
     </script>
 
     <script src="/static/user/index.js"></script>
