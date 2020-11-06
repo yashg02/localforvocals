@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='channel',
             name='contact',
-            field=models.IntegerField(default='', max_length=11),
+            field=models.IntegerField(default='0', max_length=11),
         ),
         migrations.AlterField(
             model_name='channel',

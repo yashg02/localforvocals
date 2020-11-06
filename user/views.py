@@ -129,8 +129,11 @@ def addprod(request):
         category = request.POST.get('category', '')
         desc = request.POST.get('desc', '')
         image = request.POST.get('image', '')
+        phone = request.POST.get('phone', '')
+        email = request.POST.get('shopemail', '')
         password = request.POST.get('shop_pass', '')
-        Channel = channel(name=name, category=category, desc=desc, image=image, password=password)
+        Channel = channel(name=name, category=category, desc=desc, image=image, phone=phone,
+                          email=email, password=password)
         Channel.save()
         messages.success(request, "Your Store has been created")
         return redirect('home')
