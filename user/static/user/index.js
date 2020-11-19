@@ -28,3 +28,11 @@ $('.cart').click(function() {
     updateCart(cart);
 
 });
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+}
+

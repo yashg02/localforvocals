@@ -1,99 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/user/index.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/user/img/favicon1.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/user/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
-         :root {
-            --text-clr: #4f4f4f;
+        h1 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
         }
-        
-        p {
-            color: #6c757d;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--text-clr);
-        }
-        
-        a:hover {
-            text-decoration: none;
-            color: var(--text-clr);
-        }
-        
-        h2 {
-            color: var(--text-clr);
-            font-size: 1.5rem;
-        }
-        
-        .main_cart {
-            background: #fff;
-        }
-        
-        .card {
-            border: none;
-        }
-        
-        .product_img img {
-            min-width: 200px;
-            max-height: 200px;
-        }
-        
-        .product_name {
-            color: black;
-            font-size: 1.4rem;
-            text-transform: capitalize;
-            font-weight: 500;
-        }
-        
-        .card-title p {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .remove-and-wish p {
-            font-size: 0.8rem;
-            margin-bottom: 0;
-        }
-        
-        .price-money h3 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .set_quantity {
-            position: relative;
-        }
-        
-        .set_quantity::after {
-            content: "(Note, 1 piece)";
-            width: auto;
-            height: auto;
-            text-align: center;
-            position: absolute;
-            bottom: -20px;
-            right: 1.5rem;
-            font-size: 0.8rem;
-        }
-        
-        .page-link {
-            line-height: 16px;
-            width: 45px;
-            font-size: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #495057;
-        }
-        
+
         .page-item input {
             line-height: 22px;
             padding: 3px;
@@ -102,271 +29,612 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            height: 37px;
+            width: 58px;
         }
-        
-        .page-link:hover {
-            text-decoration: none;
-            color: #495057;
-            outline: none !important;
+
+        .cart_area .product_count {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 24px;
+            overflow: hidden;
         }
-        
-        .page-link:focus {
+
+        /* line 771, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+        .cart_area .product_count input {
+            width: 76px;
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            padding-left: 10px;
+        }
+
+        .cart_area .product_count .input-number-increment {
+            position: absolute;
+            right: 0;
+            top: -7px;
+            padding: 10px;
+            border-left: 1px solid #dddddd;
+            display: inline-block;
+        }
+
+        /* line 786, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+        .cart_area .product_count .input-number-increment:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 7px;
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+        }
+
+        /* line 798, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+        .cart_area .product_count .input-number-decrement {
+            position: absolute;
+            right: 0;
+            bottom: -9px;
+            padding: 10px;
+            border-left: 1px solid #dddddd;
+            display: inline-block;
+        }
+
+        .cart_inner .table {
+            margin-bottom: 30px;
+            /* border-bottom: 1px solid #dddddd; */
+        }
+
+        /* line 1106, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table thead tr th {
+            border-top: 0px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Playfair Display", serif;
+            color: #828bb2;
+            border-bottom: 0px !important;
+        }
+
+        /* line 1119, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            vertical-align: middle;
+            align-self: center;
+        }
+
+        /* line 1126, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .media .d-flex {
+            padding-right: 30px;
+        }
+
+        /* line 1129, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .media .d-flex img {
+            max-width: 150px;
+        }
+
+        /* line 1136, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .media .media-body {
+            vertical-align: middle;
+            align-self: center;
+        }
+
+        /* line 1140, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .media .media-body p {
+            margin-bottom: 0px;
+        }
+
+        /* line 1146, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td h5 {
+            font-size: 14px;
+            color: #415094;
+            font-family: "Playfair Display", serif;
+            margin-bottom: 0px;
+        }
+
+        /* line 1153, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count {
+            margin-bottom: 0px;
+        }
+
+        /* line 1156, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count input {
+            width: 100px;
+            padding-left: 30px;
+            height: 50px;
+            outline: none;
             box-shadow: none;
         }
-        
-        .price_indiv p {
-            font-size: 1.1rem;
+
+        /* line 1164, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count .increase {
+            top: -2px;
         }
-        
-        .fa-heart:hover {
-            color: red;
+
+        /* line 1167, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count .increase:before {
+            content: "";
+            height: 40px;
+            width: 1px;
+            position: absolute;
+            left: -3px;
+            top: 0px;
+            background: #eeeeee;
+        }
+
+        /* line 1177, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count .increase:after {
+            content: "";
+            height: 1px;
+            width: 30px;
+            position: absolute;
+            left: -3px;
+            top: 22px;
+            background: #eeeeee;
+        }
+
+        /* line 1188, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr td .product_count .reduced {
+            bottom: -6px;
+        }
+
+        /* line 1195, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button .gray_btn {
+            line-height: 38px;
+            background: #f9f9ff;
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            padding: 0px 40px;
+            display: inline-block;
+            color: #415094;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* line 1208, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button td:last-child {
+            width: 60px;
+        }
+
+        /* line 1212, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text {
+            margin-left: -446px;
+        }
+
+        /* line 1215, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text input {
+            width: 200px;
+            padding: 0px 15px;
+            border-radius: 3px;
+            border: 1px solid #eeeeee;
+            height: 40px;
+            font-size: 14px;
+            color: #cccccc;
+            font-family: "Playfair Display", serif;
+            font-weight: normal;
+            margin-right: -3px;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* line 29, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_mixins.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text input.placeholder {
+            font-size: 14px;
+            color: #cccccc;
+            font-family: "Playfair Display", serif;
+            font-weight: normal;
+        }
+
+        /* line 32, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_mixins.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text input:-moz-placeholder {
+            font-size: 14px;
+            color: #cccccc;
+            font-family: "Playfair Display", serif;
+            font-weight: normal;
+        }
+
+        /* line 35, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_mixins.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text input::-moz-placeholder {
+            font-size: 14px;
+            color: #cccccc;
+            font-family: "Playfair Display", serif;
+            font-weight: normal;
+        }
+
+        /* line 38, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_mixins.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text input::-webkit-input-placeholder {
+            font-size: 14px;
+            color: #cccccc;
+            font-family: "Playfair Display", serif;
+            font-weight: normal;
+        }
+
+        /* line 1237, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text .main_btn {
+            height: 40px;
+            line-height: 38px;
+            text-transform: uppercase;
+            padding: 0px 38px;
+            margin-right: -3px;
+        }
+
+        /* line 1245, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.bottom_button td .cupon_text .gray_btn {
+            padding: 0px 40px;
+        }
+
+        /* line 1254, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area td:nth-child(3) {
+            vertical-align: top;
+        }
+
+        /* line 1259, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box {
+            margin-left: -250px;
+            text-align: right;
+        }
+
+        /* line 1264, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li {
+            margin-bottom: 12px;
+            color: #828bb2;
+        }
+
+        /* line 1267, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li input {
+            margin-left: 10px;
+        }
+
+        /* line 1270, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li:last-child {
+            margin-bottom: 0px;
+        }
+
+        /* line 1274, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li a {
+            padding-right: 30px;
+            font-size: 14px;
+            color: #828bb2;
+            position: relative;
+        }
+
+        /* line 1280, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li a:before {
+            content: "";
+            height: 16px;
+            width: 16px;
+            border: 1px solid #cdcdcd;
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* line 1293, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li a:after {
+            content: "";
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: #2577fd;
+            display: inline-block;
+            position: absolute;
+            right: 3px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        /* line 1310, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .list li.active a:after {
+            opacity: 1;
+        }
+
+        /* line 1318, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box h6 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #415094;
+            font-family: "Playfair Display", serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* line 1326, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box h6 i {
+            color: #828bb2;
+            padding-left: 5px;
+        }
+
+        /* line 1332, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .shipping_select {
+            display: block;
+            width: 100%;
+            background: #f7f7f7;
+            border: 1px solid #f7f7f7;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* line 1341, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .shipping_select .list {
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        /* line 1345, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.shipping_area .shipping_box .shipping_select .list li {
+            font-size: 14px;
+            font-weight: normal;
+            color: #828bb2;
+        }
+
+        /* line 1356, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.out_button_area .checkout_btn_inner {
+            margin-left: -388px;
+        }
+
+        /* line 1359, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .cart_inner .table tbody tr.out_button_area .checkout_btn_inner .main_btn {
+            height: 40px;
+            padding: 0px 30px;
+            line-height: 38px;
+            text-transform: uppercase;
+        }
+
+        /* line 1372, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
+
+        .gray_btn {
+            line-height: 38px;
+            background: #f9f9ff;
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            padding: 0px 40px;
+            display: inline-block;
+            color: #415094;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .btn_1 {
+            display: inline-block;
+            padding: 17px 50px;
+            border-radius: 5px;
+            background-color: #f4511e;
+            border: 2px solid #f4511e;
+            font-size: 15px;
+            font-weight: 500;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            text-transform: capitalize;
+            color: #fff;
+        }
+
+        /* line 36, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_button.scss */
+
+        .btn_1:hover {
+            background-color: #fff;
+            color: #f4511e;
+            text-decoration: none;
         }
     </style>
 </head>
 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0;">
+        <a class="navbar-brand" style="padding:0;" href="/static/user/img/logo1.png"><img
+                src="/static/user/img/logo1.png" style="width:265px;height:44px"></a>
+        <button class=" navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent "
+            aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+            <span class="navbar-toggler-icon "></span>
+        </button>
 
+        <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/">HOME</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#about ">ABOUT</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#contact ">CONTACT</a>
+                </li>
+            </ul>
+            <div class="input-group col-md-3">
+                <input class="form-control py-2" type="search" placeholder="Search . . ." id="example-search-input">
+                <span class="input-group-append">
+                    <button class="btn btn-success" type="button">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </button>
+                </span>
+            </div>
+            <ul class="navbar-nav mr-right ">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/signin/">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> SignIN
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/cart">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart (<span id="cart">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<body class="bg-light">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-10 col-11 mx-auto">
-                <div class="row mt-5 gx-3">
-                    <!-- left side div -->
-                    <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
-                        <div class="card p-4">
-                            <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
-                            <div class="row">
-                                <!-- cart images div -->
-                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                    <img src="/static/user/img/banner-1.jpg" class="img-fluid" alt="cart img">
-                                </div>
-
-
-
-
-                                <!-- cart product details -->
-                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                    <div class="row">
-                                        <!-- product name  -->
-                                        <div class="col-6 card-title">
-                                            <h1 class="mb-4 product_name">Nike Hoddie</h1>
-                                            <p class="mb-2">SHIRT - BLUE</p>
-                                            <p class="mb-2">COLOR: BLUE</p>
-                                            <p class="mb-3">SIZE: M</p>
+    <section class="cart_area section_padding">
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table" id="tablehead">
+                        <thead>
+                            <tr id="cartheader">
+                            </tr>
+                        </thead>
+                        <!-- <tbody>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="/static/user/img/private.webp" alt="" />
                                         </div>
-                                        <!-- quantity inc dec -->
-                                        <div class="col-6">
-                                            <ul class="pagination justify-content-end set_quantity">
-                                                <li class="page-item">
-                                                    <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
-                                                        <i class="fas fa-minus"></i> </button>
-                                                </li>
-                                                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox">
-                                                </li>
-                                                <li class="page-item">
-                                                    <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i
-                                                            class="fas fa-plus"></i></button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- //remover move and price -->
-                                    <div class="row">
-                                        <div class="col-8 d-flex justify-content-between remove_wish">
-                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                                            <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
-                                        </div>
-                                        <div class="col-4 d-flex justify-content-end price_money">
-                                            <h3>₹<span id="itemval">0.00 </span></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <!-- 2nd cart product -->
-                        <div class="card p-4">
-                            <div class="row">
-                                <!-- cart images div -->
-                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                    <img src="/static/user/img/banner-1.jpg" class="img-fluid" alt="cart img">
-                                </div>
-
-
-
-
-                                <!-- cart product details -->
-                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                    <div class="row">
-                                        <!-- product name  -->
-                                        <div class="col-6 card-title">
-                                            <h1 class="mb-4 product_name">Adidas Hoddie</h1>
-                                            <p class="mb-2">SHIRT - Green</p>
-                                            <p class="mb-2">COLOR: Green</p>
-                                            <p class="mb-3">SIZE: M</p>
-                                        </div>
-                                        <!-- quantity inc dec -->
-                                        <div class="col-6">
-                                            <ul class="pagination justify-content-end set_quantity">
-                                                <li class="page-item">
-                                                    <button class="page-link " onclick="decreaseNumber('textbox1','itemval1')"> <i
-                                                            class="fas fa-minus"></i> </button>
-                                                </li>
-                                                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox1">
-                                                </li>
-                                                <li class="page-item">
-                                                    <button class="page-link" onclick="increaseNumber('textbox1','itemval1')"> <i
-                                                            class="fas fa-plus"></i></button>
-                                                </li>
-                                            </ul>
+                                        <div class="media-body">
+                                            <p>Minimalistic shop for multipurpose use</p>
                                         </div>
                                     </div>
-                                    <!-- //remover move and price -->
-                                    <div class="row">
-                                        <div class="col-8 d-flex justify-content-between remove_wish">
-                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                                            <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                                </td>
+                                <td>
+                                    <h5>$360.00</h5>
+                                </td>
+                                <td>
+                                    <div class="product_count">
+                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="input-number" type="text" value="1" min="0" max="10">
+                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5>$720.00</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="/static/user/img/business.webp" alt="" />
                                         </div>
-                                        <div class="col-4 d-flex justify-content-end price_money">
-                                            <h3>₹<span id="itemval1">0.00 </span> </h3>
+                                        <div class="media-body">
+                                            <p>Minimalistic shop for multipurpose use</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- right side div -->
-                    <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
-                        <div class="right_side p-3 shadow bg-white">
-                            <h2 class="product_name mb-5">The Total Amount Of</h2>
-                            <div class="price_indiv d-flex justify-content-between">
-                                <p>Product amount</p>
-                                <p>₹<span id="product_total_amt">0.00</span></p>
-                            </div>
-                            <div class="price_indiv d-flex justify-content-between">
-                                <p>Shipping Charge</p>
-                                <p>₹<span id="shipping_charge">50.0</span></p>
-                            </div>
-                            <div class="price_indiv d-flex justify-content-between">
-                                <p>Coupon Code</p>
-                                <p>₹<span id="coupon_valid">0.00</span></p>
-                            </div>
-                            <hr />
-                            <div class="total-amt d-flex justify-content-between font-weight-bold">
-                                <p>The total amount of (including GST)</p>
-                                <p>₹<span id="total_cart_amt">0.00</span></p>
-                            </div>
-                            <button class="btn btn-primary text-uppercase">Checkout</button>
-                        </div>
-                        <!-- discount code part -->
-                        <div class="discount_code mt-3 shadow">
-                            <div class="card">
-                                <div class="card-body">
-                                    <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                        Add a discount code (optional)
-                                        <span><i class="fas fa-chevron-down pt-1"></i></span>
-                                    </a>
-                                    <div class="collapse" id="collapseExample">
-                                        <div class="mt-3">
-                                            <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
-                                            <small id="error_trw" class="text-dark mt-3">code is TCET</small>
-                                        </div>
-                                        <button class="btn btn-primary btn-sm mt-3" onclick="discount_code();changeText();couponClicked();changeColor()">Apply</button>
+                                </td>
+                                <td>
+                                    <h5>$360.00</h5>
+                                </td>
+                                <td>
+                                    <div class="product_count">
+                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="input-number" type="text" value="1" min="0" max="10">
+                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <!-- discount code ends -->
-                        <div class="mt-3 shadow p-3 bg-white">
-                            <div class="pt-4">
-                                <h5 class="mb-4">Expected delivery date</h5>
-                                <p>Oct 27th 2020 - Oct 29th 2020</p>
-                            </div>
-                        </div>
-                    </div>
+                                </td>
+                                <td>
+                                    <h5>$720.00</h5>
+                                </td>
+                            </tr>
+                            <tr class="bottom_button">
+                                <td>
+                                    <a class="btn_1" href="#">Continue Shopping</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="cupon_text float-right">
+                                        <a class="btn_1" href="#">Proceed to Checkout</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h5>Subtotal</h5>
+                                </td>
+                                <td>
+                                    <h5>$2160.00</h5>
+                                </td>
+                            </tr>
+                        </tbody> -->
+                        <tbody id="cartBody">
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- Popper.js first, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-        var down_1 = document.getElementById('collapseExample');
-
-        function changeText() {
-            down_1.innerHTML = "Coupon Applied!!!";
-        }
-        var coup = document.getElementById('coupon_valid');
-
-        function couponClicked() {
-            coup.innerHTML = "-50.0";
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="/static/user/index.js"></script>
+    <script>
+        if (localStorage.getItem('cart') != null) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+            updatePopover(cart);
         }
 
-        function changeColor() {
-            document.getElementById('collapseExample').style.cssText = 'color:green'; //background-color:red'
-        }
-
-
-
-        var product_total_amt = document.getElementById('product_total_amt');
-        var shipping_charge = document.getElementById('shipping_charge');
-        var total_cart_amt = document.getElementById('total_cart_amt');
-        var discountCode = document.getElementById('discount_code1');
-
-        const decreaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            console.log(itemprice.innerHTML);
-            // console.log(itemval.value);
-            if (itemval.value <= 0) {
-                itemval.value = 0;
-            } else {
-                itemval.value = parseInt(itemval.value) - 1;
-                itemval.style.background = '#fff';
-                itemval.style.color = '#000';
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 250;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 250;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+        function updatePopover(cart) {
+            // console.log('We are inside updatePopover');
+            // console.log(cart);
+            var popStr = "";
+            // popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+            // var i = 1;
+            for (var item in cart) {
+                // popStr = popStr + "<b>" + i + "</b>. ";
+                popStr = popStr + '<tr><td><div class="media"><div class="d-flex"><img src="/static/user/img/private.webp" alt="" /></div><div class="media-body"><p>Minimalistic shop for multipurpose use</p></div></div></td><td><h5>$360.00</h5></td><td><ul class="pagination" style="margin-bottom: 0;margin-left: 70px;"><li class="page-item"><button class="page-link " onclick="minus()" id="' + item + '"> <i class="fa fa-minus"></i> </button></li><li class="page-item" id="val' + item + '"><input type="text" name="" class="page-link" value="' + cart[item] + '" id="textbox1"></li><li class="page-item"><button class="page-link"> <i class="fa fa-plus"></i></button></li></ul></td><td><h5>$720.00</h5></td><tr>';
+                // i = i + 1;
             }
-        }
-        const increaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            // console.log(itemval.value);
-            if (itemval.value >= 10) {
-                itemval.value = 10;
-                alert('max 10 allowed');
-                itemval.style.background = 'red';
-                itemval.style.color = '#fff';
-            } else {
-                itemval.value = parseInt(itemval.value) + 1;
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) + 250;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 250;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+            if (popStr != "") {
+                popStr = popStr + '<tr class="bottom_button"><td><a href="javascript:history.go(0)"><button class="btn_1" href="#" onclick="clearCart()">Clear Cart</button></a></td><td></td><td></td><td><div class="cupon_text float-right"><a class="btn_1" href="/">Continue Shopping</a></div></td></tr><tr><td></td><td></td><td><h5>Subtotal</h5></td><td><h5>$2160.00</h5></td></tr><tr class="shipping_area"><td></td><td></td><td></td><td><div class="shipping_box"><a class="btn_1" href="#">Proceed to Checkout</a></div></td></tr>';
+                // console.log(popStr);
+                document.getElementById("tablehead").style.border = "1px solid #dddddd";
+                document.getElementById("cartheader").innerHTML = '<th scope="col">Product</th><th scope="col">Price</th><th scope="col" style="padding-left:120px;">Quantity</th><th scope="col">Total</th>';
+                document.getElementById("cartBody").innerHTML = popStr;
             }
-        }
-
-        const discount_code = () => {
-            let totalamtcurr = parseInt(total_cart_amt.innerHTML);
-            let error_trw = document.getElementById('error_trw');
-
-            if (discountCode.value === 'TCET') {
-                let newtotalamt = totalamtcurr - 50;
-                total_cart_amt.innerHTML = newtotalamt;
-
-                error_trw.innerHTML = "Hurray! code is valid";
-            } else {
-                error_trw.innerHTML = "Try Again! Valid code is thapa";
+            else {
+                document.getElementById("cartBody").innerHTML = "<h1>No items in Cart</h1>";
             }
+
         }
+
     </script>
 </body>
 
