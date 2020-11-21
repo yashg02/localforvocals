@@ -73,14 +73,14 @@
                             </form>
                         </li>
                         {% if user.is_authenticated %}
-                        <ul class="navbar-nav ml-auto" style="margin-top: 15px">
-                            <li class="nav-item">
-                                <a class="nav-link" style="color:white;" onclick="clicked()">
+                        <!-- <ul class="navbar-nav ml-auto" style="margin-top: 15px"> -->
+                            <li>
+                                <a style="cursor: pointer;" onclick="clicked()">
                                     <!-- <i class="fa fa-sign-in" aria-hidden="true"></i> -->
-                                    {{request.user}}
+                                    {{request.user}}<span class="glyphicon glyphicon-log-out"></span>
                                 </a>
                             </li>
-                        </ul>
+                        <!-- </ul> -->
                         {% else %}
                         <li><a href="signin/"><span class="glyphicon glyphicon-log-in"></span> SignIN</a></li>
                         {% endif %}
