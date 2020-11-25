@@ -143,9 +143,16 @@
             </div>
             <ul class="navbar-nav mr-right ">
                 <li class="nav-item">
+                    {% if user.is_authenticated %}
+                    <a style="cursor: pointer;" onclick="clicked()">
+                        <!-- <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                        {{request.user}}<span class="glyphicon glyphicon-log-out"></span>
+                    </a>
+                    {% else %}
                     <a class="nav-link" style="color:white;padding:1rem 1rem;" href="/signin/">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> SignIN
                     </a>
+                    {% endif %}
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/cart">
@@ -343,6 +350,16 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="/static/user/index.js"></script>
+    <script>
+        function clicked() {
+            if (confirm('Are you sure you want to Logout?')) {
+                location.href="/logout";
+            } else {
+                return false;
+            }
+        }
+    </script>
+
 
 </body>
 

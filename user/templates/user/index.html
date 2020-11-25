@@ -118,6 +118,28 @@
             <iframe frameborder="0" style="visibility:visible" src="javascript:''" class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
         </div>
 
+        <!-- Alert Messages -->
+
+        <!-- localhost popup if required -->
+        <!-- {% if messages %}
+        {% for message in messages %}
+        {% if message.tags %}
+
+        <script>alert("{{ message }}")</script> {% endif %}
+        
+        {% endfor %}
+        {% endif %} -->
+
+        <!-- {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} Important: {% endif %}
+            {{ message }}
+        </div>
+        {% endfor %} -->
+
         <!-- Carousel -->
 
         <div class="container-fluid" id='home' style="padding: 70px 50px 0px;">

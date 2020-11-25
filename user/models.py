@@ -7,7 +7,7 @@ class channel(models.Model):
     name = models.CharField(max_length=20, default="")
     category = models.CharField(max_length=20, default="")
     desc = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='user/images', default="")
+    image = models.ImageField(upload_to='user/images', default='defaultuser.jpg')
     password = models.CharField(max_length=100, default="pass1234", unique=False)
     phone = models.CharField(max_length=13, null=True)
     email = models.EmailField(max_length=100, null=True)

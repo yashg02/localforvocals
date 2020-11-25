@@ -60,6 +60,9 @@ def product(request):
 def cart(request):
     return render(request, 'user/cart.html')
 
+
+## USER Login, Logout, SignUp
+
 def handleSignup(request):
     if request.method == 'POST':
 
@@ -73,17 +76,17 @@ def handleSignup(request):
 
         #Username length check
         if len(username) > 10:
-            messages.error(request, 'Username too long')
+            messages.error(request, "Username too long")
             return redirect('home')
 
         #Alphanumeric check
         if not username.isalnum():
-            messages.error(request, 'Username must comprise of alphanumeric characters')
+            messages.error(request, "Username must comprise of alphanumeric characters")
             return redirect('home')
 
         #Password match check
         if password != cpassword:
-            messages.success(request, 'Passwords do not match.')
+            messages.error(request, "Passwords do not match.")
             return redirect('home')
 
         #Create User
@@ -92,7 +95,7 @@ def handleSignup(request):
         myuser.email = email
         myuser.set_password = password
         myuser.save()
-        messages.success(request, 'Your Account has been created')
+        messages.success(request, "Your Account has been created")
         return redirect('home')
 
     return HttpResponse('404 - NOT FOUND')
@@ -123,6 +126,80 @@ def handleLogout(request):
     messages.success(request, "Successfully Logged Out")
     return redirect('home')
 
+
+## BUISNESS Login, Logout, SignUp
+
+def BSignup(request):
+    if request.method == 'POST':
+
+        # Get user params
+        storename = request.POST['storename']
+        shopemail = request.POST['shopemail']
+        shop_pass = request.POST['shop_pass']
+        shop_pass1 = request.POST['shop_pass1']
+
+        #Checks for erroneous inputs
+
+        #Storename length check
+        if len(storename) > 10:
+            messages.error(request, "Storename too long")
+            return redirect('home')
+
+        #Alphanumeric check
+        if not storename.isalnum():
+            messages.error(request, "Storename must comprise of alphanumeric characters")
+            return redirect('home')
+
+        #Password match check
+        if shop_pass != shop_pass1:
+            messages.error(request, "Passwords do not match.")
+            return redirect('home')
+
+        #Create User
+        Buser = User.objects.create_user(storename, shopemail, shop_pass)
+        Buser.name = storename
+        Buser.email = shopemail
+        Buser.set_password = shop_pass
+        Buser.is_staff = True
+        Buser.save()
+        messages.success(request, "Your Account has been created")
+        return redirect('home')
+
+    return HttpResponse('404 - NOT FOUND')
+
+def BLogin(request):
+    if request.method == 'POST':
+
+        # Get user params
+        shop_email = request.POST['shop_email']
+        shop_pass3 = request.POST['shop_pass3']
+
+        user = authenticate(username= shop_email, password= shop_pass3)
+
+        if user is not None:
+            if user.is_staff:
+                login(request, user)
+                messages.success(request, "Successfully Logged In")
+                return redirect('ProductView')
+
+            else:
+                messages.error(request, "Login using a business account.")
+                return redirect('home')
+            
+        else:
+            messages.error(request, "Invalid Credentials. Please try again.")
+            return redirect('home')
+
+    return HttpResponse('404 - NOT FOUND')
+
+def BLogout(request):
+    logout(request)
+    messages.success(request, "Successfully Logged Out")
+    return redirect('home')
+
+
+
+## Add Product
 def addprod(request):
     if request.method == 'POST':
         name = request.POST.get('storename', '')
