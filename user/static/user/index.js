@@ -36,3 +36,4 @@ function clearCart() {
     updateCart(cart);
 }
 
+

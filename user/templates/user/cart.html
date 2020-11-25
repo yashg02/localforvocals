@@ -479,6 +479,25 @@
                 <li class="nav-item ">
                     <a class="nav-link " style="color:white;padding:1rem 1rem;" href="/#contact ">CONTACT</a>
                 </li>
+                <div id="google_translate_element" style="margin-top: 12px;margin-left: 10px;"></div>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                            includedLanguages: 'en,hi,pa,gu,kn,mr,or,ta,sd,te,ur',
+                        }, 'google_translate_element');
+                    }
+                </script>
+
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                <div class="skiptranslate">
+                    <iframe frameborder="0" style="visibility:visible" src="javascript:''"
+                        class="goog-te-banner-frame skiptranslate" id=":2.container"></iframe>
+                </div>
             </ul>
             <div class="input-group col-md-3">
                 <input class="form-control py-2" type="search" placeholder="Search . . ." id="example-search-input">
@@ -612,19 +631,12 @@
         }
 
         function updatePopover(cart) {
-            // console.log('We are inside updatePopover');
-            // console.log(cart);
             var popStr = "";
-            // popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
-            // var i = 1;
             for (var item in cart) {
-                // popStr = popStr + "<b>" + i + "</b>. ";
-                popStr = popStr + '<tr><td><div class="media"><div class="d-flex"><img src="/static/user/img/private.webp" alt="" /></div><div class="media-body"><p>Minimalistic shop for multipurpose use</p></div></div></td><td><h5>$360.00</h5></td><td><ul class="pagination" style="margin-bottom: 0;margin-left: 70px;"><li class="page-item"><button class="page-link " onclick="minus()" id="' + item + '"> <i class="fa fa-minus"></i> </button></li><li class="page-item" id="val' + item + '"><input type="text" name="" class="page-link" value="' + cart[item] + '" id="textbox1"></li><li class="page-item"><button class="page-link"> <i class="fa fa-plus"></i></button></li></ul></td><td><h5>$720.00</h5></td><tr>';
-                // i = i + 1;
+                popStr = popStr + '<tr><td><div class="media"><div class="d-flex"><a href="/static/user/img/dummy.jpg"><img src="/static/user/img/dummy.jpg" alt="" /></a></div><div class="media-body"><p>Minimalistic shop for multipurpose use</p></div></div></td><td><h5>$360.00</h5></td><td><ul class="pagination divpr" style="margin-bottom: 0;margin-left: 70px;"><button id="minus' + item + '" type="button" class="btn btn-danger minus">-</button><span id="val' + item + '" style="padding: 5px 20px;">' + cart[item] + '</span><button id="plus' + item + '" type="button" class="btn btn-success plus">+</button></ul></td><td><h5>$720.00</h5></td><tr>';
             }
             if (popStr != "") {
-                popStr = popStr + '<tr class="bottom_button"><td><a href="javascript:history.go(0)"><button class="btn_1" href="#" onclick="clearCart()">Clear Cart</button></a></td><td></td><td></td><td><div class="cupon_text float-right"><a class="btn_1" href="/">Continue Shopping</a></div></td></tr><tr><td></td><td></td><td><h5>Subtotal</h5></td><td><h5>$2160.00</h5></td></tr><tr class="shipping_area"><td></td><td></td><td></td><td><div class="shipping_box"><a class="btn_1" href="#">Proceed to Checkout</a></div></td></tr>';
-                // console.log(popStr);
+                popStr = popStr + '<tr class="bottom_button"><td><a href="javascript:history.go(0)"><button class="btn_1" href="#" onclick="clearCart()">Clear Cart</button></a></td><td></td><td></td><td><div class="cupon_text float-right"><a class="btn_1" href="/">Continue Shopping</a></div></td></tr><tr><td></td><td></td><td><h5>Subtotal</h5></td><td><h5>$2160.00</h5></td></tr><tr class="shipping_area"><td></td><td></td><td></td><td><div class="shipping_box"><a class="btn_1" href="/checkout">Proceed to Checkout</a></div></td></tr>';
                 document.getElementById("tablehead").style.border = "1px solid #dddddd";
                 document.getElementById("cartheader").innerHTML = '<th scope="col">Product</th><th scope="col">Price</th><th scope="col" style="padding-left:120px;">Quantity</th><th scope="col">Total</th>';
                 document.getElementById("cartBody").innerHTML = popStr;
@@ -632,9 +644,31 @@
             else {
                 document.getElementById("cartBody").innerHTML = "<h1>No items in Cart</h1>";
             }
-
         }
 
+        $('.divpr').on("click", "button.minus", function () {
+            a = this.id.slice(7,);
+            cart['pr' + a] = cart['pr' + a] - 1;
+            cart['pr' + a] = Math.max(0, cart['pr' + a]);
+            if (cart['pr' + a] == 0) {
+                var cartupdate = JSON.parse(localStorage.getItem('cart'));
+                delete cartupdate['pr' + a];
+                localStorage.setItem('cart', JSON.stringify(cartupdate));
+                location.reload();
+            }
+            else {
+                document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+                updateCart(cart);
+            }
+        });
+
+        $('.divpr').on("click", "button.plus", function () {
+            a = this.id.slice(6,);
+            cart['pr' + a] = cart['pr' + a] + 1;
+            cart['pr' + a] = Math.min(99, cart['pr' + a]);
+            document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+            updateCart(cart);
+        });
     </script>
 </body>
 
