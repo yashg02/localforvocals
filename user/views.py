@@ -180,7 +180,7 @@ def BLogin(request):
             if user.is_staff:
                 login(request, user)
                 messages.success(request, "Successfully Logged In")
-                return redirect('ProductView')
+                return redirect('home')
 
             else:
                 messages.error(request, "Login using a business account.")
