@@ -140,3 +140,5 @@ def addprod(request):
 
     return HttpResponse('404 - NOT FOUND')
 
+def checkout(request):
+    return render(request, 'user/checkout.html')
