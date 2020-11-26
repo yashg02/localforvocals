@@ -163,7 +163,7 @@ def BSignup(request):
         Buser.is_staff = True
         Buser.save()
         messages.success(request, "Your Account has been created")
-        return redirect('home')
+        return addchan(request)
 
     return HttpResponse('404 - NOT FOUND')
 
@@ -180,7 +180,7 @@ def BLogin(request):
             if user.is_staff:
                 login(request, user)
                 messages.success(request, "Successfully Logged In")
-                return redirect('home')
+                return redirect('storeinfo', shop_email)
 
             else:
                 messages.error(request, "Login using a business account.")
@@ -199,8 +199,8 @@ def BLogout(request):
 
 
 
-## Add Product
-def addprod(request):
+## Add Channel
+def addchan(request):
     if request.method == 'POST':
         name = request.POST.get('storename', '')
         category = request.POST.get('category', '')
@@ -219,3 +219,6 @@ def addprod(request):
 
 def checkout(request):
     return render(request, 'user/checkout.html')
+
+def addprod(request):
+    return HttpResponse('Add Product')
